@@ -1,0 +1,43 @@
+﻿* { margin: 0; padding: 0; font-family: '\5FAE\8F6F\96C5\9ED1'; font-size: 14px; }
+
+.clearfix:after { display: block; clear: both; content: ""; visibility: hidden; height: 0; }
+.clearfix { zoom: 1; }
+
+
+.J_print { margin: 0 auto; width: 740px; }
+
+
+.J_ticket { border: 1px solid #ddd; }
+    .J_ticket .t_header { padding: 10px; background-color: #f9f9f9; border-bottom: 1px solid #ddd; text-align: center; }
+        .J_ticket .t_header .h_txt { font-size: 20px; color: #333; }
+        .J_ticket .t_header .h_tips { margin-top: 10px; font-size: 18px; word-spacing: 8px; letter-spacing: 10px; color: #333; }
+    .J_ticket .t_table { padding: 20px 20px 20px 0; }
+        .J_ticket .t_table table { width: 100%; }
+            .J_ticket .t_table table tbody { }
+                .J_ticket .t_table table tbody tr { }
+                    .J_ticket .t_table table tbody tr .t_title { text-align: right; }
+                    .J_ticket .t_table table tbody tr .t_value { }
+                    .J_ticket .t_table table tbody tr td .t_img { text-align: right; }
+                        .J_ticket .t_table table tbody tr td .t_img img { width: 100px; vertical-align: top; }
+                    .J_ticket .t_table table tbody tr td { padding: 10px 0; vertical-align: top; color: #333; }
+
+
+                        .J_ticket .t_table table tbody tr td .t_score { width: 315px; min-height: 240px; border-left: 1px solid #ddd; }
+                            .J_ticket .t_table table tbody tr td .t_score .s_item { float: left; padding: 10px 0 10px 30px; font-size: 14px; white-space: nowrap; color: #333; }
+                                .J_ticket .t_table table tbody tr td .t_score .s_item span { display: inline-block; *zoom: 1; *display: inline; margin-left: 10px; padding: 0 10px; width: 50px; border-bottom: 1px solid #333; text-align: center; font-size: 16px; }
+
+                            .J_ticket .t_table table tbody tr td .t_score .s_remark { clear: both; float: left; padding: 10px 0 10px 30px; font-size: 16px; color: #333; }
+                                .J_ticket .t_table table tbody tr td .t_score .s_remark .r_left { float: left; font-size: 16px; white-space: nowrap; color: #333; }
+                                .J_ticket .t_table table tbody tr td .t_score .s_remark .r_right { display: block; float: left; margin-left: 10px; width: 220px; line-height: 24px; font-size: 14px; word-wrap: break-word; word-break: normal; }
+
+
+
+
+
+    .J_ticket .t_footer { padding: 20px; border-top: 1px solid #ddd; }
+        .J_ticket .t_footer .f_left { float: left; }
+            .J_ticket .t_footer .f_left .l_title { font-weight: bold; color: #333; }
+            .J_ticket .t_footer .f_left .l_txt { margin-top: 10px; }
+                .J_ticket .t_footer .f_left .l_txt p { line-height: 26px; color: #333; }
+        .J_ticket .t_footer .f_right { float: right; padding-top: 30px; }
+            .J_ticket .t_footer .f_right img { width: 80px; }

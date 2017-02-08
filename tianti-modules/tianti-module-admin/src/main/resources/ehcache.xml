@@ -1,0 +1,24 @@
+<ehcache>
+
+    <diskStore path="java.io.tmpdir"/>
+	
+    <defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="true"
+            maxElementsOnDisk="10000000"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"
+            memoryStoreEvictionPolicy="LRU"
+            />
+     
+     <cache name="org_cache"
+     		maxElementsOnDisk="20000"  
+            maxElementsInMemory="2000"  
+            eternal="true"  
+            overflowToDisk="true"  
+            diskPersistent="false"/>
+     
+</ehcache>

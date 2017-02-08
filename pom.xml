@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jeff</groupId>
+  <artifactId>tianti</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+  	<module>tianti-common</module>
+  	<module>tianti-org</module>
+  	<module>tianti-modules</module>
+  </modules>
+  <!-- 主要依赖库的版本定义 -->
+  <properties>
+    <!-- 定义资源文件的编码格式 -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- 依赖库版本定义 -->
+    <tianti.version>1.0.0</tianti.version>
+    <junit.version>4.12</junit.version>
+    <spring.version>4.2.5.RELEASE</spring.version>
+    <hibernate.version>4.3.5.Final</hibernate.version>
+    <hibernate.annotations.version>4.0.4.Final</hibernate.annotations.version>
+    <mysql.driver.version>5.1.22</mysql.driver.version>
+    <shiro.version>1.3.2</shiro.version>
+    <jackson.version>1.9.2</jackson.version>
+	<fastjson.version>1.2.20</fastjson.version>
+    <log4j2.version>2.7</log4j2.version>
+    <slf4j.version>1.7.21</slf4j.version>
+    <poi.version>3.14</poi.version>
+    <commons-io.version>2.4</commons-io.version>
+	<commons-fileupload.version>1.3.1</commons-fileupload.version>
+	
+	<servlet.version>4.0.0-b01</servlet.version>
+	<jstl.version>1.2</jstl.version>
+  </properties>
+</project>
