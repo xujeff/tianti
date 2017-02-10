@@ -8,9 +8,8 @@
       tianti-org：用户权限模块服务实现；
       tianti-module-admin：后台web项目实现；
       
-    项目概览：
-    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)
-                                                    
+    项目概览(节选)：
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)                                                
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
 
