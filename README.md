@@ -10,7 +10,7 @@
   
     使用说明：
      1、数据库使用mysql，初始化脚本位于tianti-module-admin中的src/main/webapp/scripts/tianti_stage.sql。
-     2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为888888。
+     2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。
       
     项目概览(节选)：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)                                                
