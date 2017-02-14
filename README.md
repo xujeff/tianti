@@ -8,11 +8,11 @@
      tianti-org：用户权限模块服务实现；
      tianti-module-admin：后台web项目实现；
   
-   使用说明：
+    使用说明：
      1、数据库使用mysql，初始化脚本位于tianti-module-admin中的src/main/webapp/scripts/tianti_stage.sql。
      2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为888888。
       
-   项目概览(节选)：
+    项目概览(节选)：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)                                                
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
