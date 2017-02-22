@@ -1,5 +1,6 @@
 # tianti
-    项目描述：天梯是一个用java相关技术搭建的后台服务端模板，目前仅仅包括基础模块和权限模块，用户可以结合自身业务进行相应扩展。
+    项目描述：天梯（tianti）是一款使用Java编写的轻量级权限系统，目前可以实现后端登陆、用户管理、角色管理、资源目录管理、角色授权等基本权限管理。
+    同时也是一款服务端后台模板，使用layer和自身样式实现了固定模块的增删查改功能。项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展。
     
     技术选型：Spring Data JPA、Hibernate、Shiro、 Spring MVC、Layer、Mysql等。
     
@@ -17,4 +18,6 @@
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
 
-    联系方式：xuzhexu@139.com
+    联系方式：xuzhexu@139.com 
+  qq交流群：422039518
+
