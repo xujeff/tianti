@@ -18,6 +18,6 @@
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
 
-    联系方式：xuzhexu@139.com 
-  qq交流群：422039518
+    联系方式：xuzhexu@139.com qq交流群：422039518
+  
 
