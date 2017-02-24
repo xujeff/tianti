@@ -32,4 +32,17 @@
 	<servlet.version>4.0.0-b01</servlet.version>
 	<jstl.version>1.2</jstl.version>
   </properties>
+  
+  <build>  
+	    <plugins>  
+	        <plugin>  
+	            <groupId>org.apache.maven.plugins</groupId>  
+	            <artifactId>maven-compiler-plugin</artifactId>  
+	            <configuration>  
+	                <source>1.7</source>  
+	                <target>1.7</target>  
+	            </configuration>  
+	        </plugin>  
+	    </plugins>  
+  </build>  
 </project>
