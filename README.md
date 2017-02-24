@@ -14,8 +14,10 @@
      2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。
       
     项目概览(节选)：
-    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)                                                
-    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)  
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/userlist.png)
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/rolelist.png)
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)                                              
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
 
     联系方式：xuzhexu@139.com qq交流群：422039518
