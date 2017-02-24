@@ -240,6 +240,13 @@
 	  <scope>system</scope>  
 	  <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/springside-core-4.2.2.GA.jar</systemPath>  
 	</dependency>
+	<dependency>
+	  <groupId>org.terracotta</groupId>  
+	  <artifactId>statistics</artifactId>  
+	  <version>1.0.2</version>  
+	  <scope>system</scope>  
+	  <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/statistics-1.0.2.jar</systemPath>  
+	</dependency>
   </dependencies>
   <build>
     <finalName>tianti-module-admin</finalName>
