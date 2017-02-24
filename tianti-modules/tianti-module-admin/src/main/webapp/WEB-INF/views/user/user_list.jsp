@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8" contentType="text/html;charset=utf-8" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -103,11 +103,11 @@ function updStatus(id, status){
 		
 		<div class="mt20 plr20">
 			
-			<form action="${ctx }/user/list" id="queryForm">
+			<form action="${ctx }/user/list" id="queryForm" method="post">
 	        <div class="J_toolsBar clearfix">
-				<div class="t_label">用户姓名</div>
+				<div class="t_label">账号</div>
 				<div class="t_text ml10">
-                	<input placeholder="请输入用户姓名" type="text" name="name" value="${name }"/>
+                	<input placeholder="请输入账号" type="text" name="userName" value="${userQueryDTO.userName }"/>
                 </div>
                 <div class="t_button ml10">
                		<a class="abtn red" href="javascript:myQuery();">查询</a>
@@ -124,9 +124,9 @@ function updStatus(id, status){
                      <table>
                          <thead>
                              <tr>
-                                 <!-- <td>
-                                 	<span>序号</span>
-                                 </td> -->
+                                 <td>
+                                     <span>序号</span>
+                                 </td>
                                  <td>
                                      <span>角色</span>
                                  </td>
@@ -139,9 +139,9 @@ function updStatus(id, status){
                                  <td>
                                      <span>电话号码</span>
                                  </td>
-                                <!--  <td>
+                                 <td>
                                  	 <span>创建时间</span>
-                                 </td> -->
+                                 </td> 
                                  <td>
                                  	 <span>状态</span>
                                  </td>
@@ -151,13 +151,13 @@ function updStatus(id, status){
                              </tr>
                          </thead>
                          <tbody>
-                         	<c:forEach items="${users }" var="u">
+                         	<c:forEach items="${page.list }" var="u" varStatus="status">
 	                             <tr>
-	                                 <%-- <td class="first">
-	                                 	 <div class="t_text tc">
-	                                        ${r.no }
+	                                 <td>
+	                                     <div class="t_text tc">
+	                                        ${status.index+1 }
 	                                     </div>
-	                                 </td> --%>
+	                                 </td>
 	                                 <td>
 	                                     <div class="t_text tc">
 	                                        <c:forEach items="${u.roles }" var="r">
@@ -180,11 +180,11 @@ function updStatus(id, status){
 	                                         ${u.mobile }
 	                                     </div>
 	                                 </td>
-	                                 <%-- <td>
+	                                 <td>
 	                                     <div class="t_text tc">
 	                                         <fmt:formatDate value="${u.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
 	                                     </div>
-	                                 </td> --%>
+	                                 </td>
 	                                 <td>
 	                                 	<div class="t_text tc">
 	                                 		<c:choose>
@@ -212,16 +212,13 @@ function updStatus(id, status){
 	                                 </td>
 	                             </tr>
                              </c:forEach>
+                             <tr><td colspan="8" style="text-align:center;"><%@ include file="../common/pager.jsp"%></td></tr>
                          </tbody>
                      </table>
                  </div>
-                 
              </div>
-			
 		</div>
-		
     </div>
-
 
 </body>
 </html>

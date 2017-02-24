@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jeff.tianti.common.dto.AjaxResult;
+import com.jeff.tianti.common.entity.PageModel;
 import com.jeff.tianti.common.util.Md5Util;
+import com.jeff.tianti.org.dto.RoleQueryDTO;
+import com.jeff.tianti.org.dto.UserQueryDTO;
 import com.jeff.tianti.org.entity.Resource;
 import com.jeff.tianti.org.entity.Role;
 import com.jeff.tianti.org.entity.User;
@@ -40,25 +43,46 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	/**
+	 * 获取用户列表
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/list")
 	public String list(HttpServletRequest request, Model model){
-
-		model.addAttribute(Constants.MENU_NAME, Constants.MENU_USER_LIST);
+		String userName = request.getParameter("userName");
+		String currentPageStr = request.getParameter("currentPage");
+		String pageSizeStr = request.getParameter("pageSize");
 		
-		String name = request.getParameter("name");
-		model.addAttribute("name", name);
-		
-		Map<String, Object> params = new HashMap<String, Object>();
-		if(StringUtils.isNotBlank(name)){
-			params.put("realName", "%" + StringUtils.trim(name) + "%");
+		int currentPage = 1;
+		int pageSize = 10;
+		if(StringUtils.isNotBlank(currentPageStr)){
+			currentPage = Integer.parseInt(currentPageStr);
+		}
+		if(StringUtils.isNotBlank(pageSizeStr)){
+			pageSize = Integer.parseInt(pageSizeStr);
 		}
 		
-		List<User> users = userService.findUsers(params);
-		model.addAttribute("users", users);
+		UserQueryDTO userQueryDTO = new UserQueryDTO();
+		userQueryDTO.setUserName(userName);
+		userQueryDTO.setCurrentPage(currentPage);
+		userQueryDTO.setPageSize(pageSize);
+		
+		PageModel<User> page = userService.queryUserPage(userQueryDTO);
+		model.addAttribute("page", page);
+		model.addAttribute("userQueryDTO", userQueryDTO);
+		model.addAttribute(Constants.MENU_NAME, Constants.MENU_USER_LIST);
 		
 		return "user/user_list";
 	}
-
+	
+	/**
+	 * 跳转到用户编辑页
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/dialog/edit")
 	public String dialogEdit(HttpServletRequest request, Model model){
 		
@@ -77,6 +101,11 @@ public class UserController {
 		return "user/dialog/user_edit";
 	}
 	
+	/**
+	 * 用户保存操作
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/ajax/save")
 	@ResponseBody
 	public AjaxResult ajaxSave(HttpServletRequest request){
@@ -137,7 +166,7 @@ public class UserController {
 	
 	
 	/**
-	 * 
+	 * 修改用户密码
 	 * @param request
 	 * @return
 	 */
@@ -190,24 +219,40 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping("/role_list")
-	public String roleList(HttpServletRequest request, Model model){
-		
-		model.addAttribute(Constants.MENU_NAME, Constants.MENU_ROLE_LIST);
+	public String roleList(HttpServletRequest request, Model model){		
 		
 		String name = request.getParameter("name");
-		model.addAttribute("name", name);
-		Map<String, Object> params = new HashMap<String, Object>();
-		if(StringUtils.isNotBlank(name)){
-			params.put("name", "%" + name.trim() + "%");
+		String currentPageStr = request.getParameter("currentPage");
+		String pageSizeStr = request.getParameter("pageSize");
+		
+		int currentPage = 1;
+		int pageSize = 10;
+		if(StringUtils.isNotBlank(currentPageStr)){
+			currentPage = Integer.parseInt(currentPageStr);
+		}
+		if(StringUtils.isNotBlank(pageSizeStr)){
+			pageSize = Integer.parseInt(pageSizeStr);
 		}
 		
-		List<Role> roles = roleService.findRoles(params);
-		model.addAttribute("roles", roles);
+		RoleQueryDTO roleQueryDTO = new RoleQueryDTO();
+		roleQueryDTO.setName(name);
+		roleQueryDTO.setCurrentPage(currentPage);
+		roleQueryDTO.setPageSize(pageSize);
 		
+		PageModel<Role> page = roleService.queryRolePage(roleQueryDTO);
+		model.addAttribute("page", page);
+		model.addAttribute("roleQueryDTO", roleQueryDTO);
+		model.addAttribute(Constants.MENU_NAME, Constants.MENU_ROLE_LIST);
 		
 		return "user/role_list";
 	}
 	
+	/**
+	 * 跳转到角色编辑页面
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/dialog/role_edit")
 	public String dialogRoleEdit(HttpServletRequest request, Model model){
 		
@@ -296,7 +341,7 @@ public class UserController {
 	
 
 	/**
-	 * 
+	 * 角色删除
 	 * @param request
 	 * @return
 	 */
@@ -321,11 +366,14 @@ public class UserController {
 		return ajaxResult;
 	}
 	
+	/**
+	 * 跳转到菜单列表
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/menu_list")
 	public String menuList(HttpServletRequest request, Model model){
-		
-		model.addAttribute(Constants.MENU_NAME, Constants.MENU_NAME_LIST);
-		
 		String name = request.getParameter("name");
 		Map<String, Object> params = new HashMap<String, Object>();
 		if(StringUtils.isNotBlank(name)){
@@ -335,6 +383,7 @@ public class UserController {
 		
 		List<Resource> resources = resourceService.findMenuResource(params);
 		model.addAttribute("resources", resources);
+		model.addAttribute(Constants.MENU_NAME, Constants.MENU_NAME_LIST);
 		
 		return "user/menu_list";
 	}

@@ -151,6 +151,11 @@
 		    <artifactId>validation-api</artifactId>
 		    <version>1.1.0.Final</version>
     </dependency>
+    <dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.2</version>
+	</dependency>
 	<!-- servlet end -->
 	<!-- shiro start -->
 	<dependency>
@@ -246,6 +251,13 @@
 	  <version>1.0.2</version>  
 	  <scope>system</scope>  
 	  <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/statistics-1.0.2.jar</systemPath>  
+	</dependency>
+	<dependency>
+	  <groupId>com.jsptags</groupId>  
+	  <artifactId>taglib</artifactId>  
+	  <version>1.0.0</version>  
+	  <scope>system</scope>  
+	  <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/pager-taglib.jar</systemPath>  
 	</dependency>
   </dependencies>
   <build>

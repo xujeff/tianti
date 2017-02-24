@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="utf-8" contentType="text/html;charset=utf-8" %>
+<%@ page language="java" pageEncoding="utf-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -103,11 +103,11 @@ function updDeleteFlag(id, deleteFlag){
 		
 		<div class="mt20 plr20">
 			
-			<form action="${ctx }/user/role_list" id="queryForm">
+			<form action="${ctx }/user/role_list" id="queryForm" method="POST">
 	        <div class="J_toolsBar clearfix">
 				<div class="t_label">角色名称</div>
 				<div class="t_text ml10">
-                	<input placeholder="请输入角色名称" type="text" name="name" value="${name }"/>
+                	<input placeholder="请输入角色名称" type="text" name="name" value="${roleQueryDTO.name }"/>
                 </div>
                 <div class="t_button ml10">
                		<a class="abtn red" href="javascript:myQuery();">查询</a>
@@ -124,9 +124,9 @@ function updDeleteFlag(id, deleteFlag){
                      <table>
                          <thead>
                              <tr>
-                                 <!-- <td>
+                                 <td>
                                  	<span>序号</span>
-                                 </td> -->
+                                 </td>
                                  <td>
                                      <span>名称</span>
                                  </td>
@@ -145,13 +145,13 @@ function updDeleteFlag(id, deleteFlag){
                              </tr>
                          </thead>
                          <tbody>
-                         	<c:forEach items="${roles }" var="r">
+                         	<c:forEach items="${page.list }" var="r" varStatus="status">
 	                             <tr>
-	                                 <%-- <td class="first">
+	                                 <td class="first">
 	                                 	 <div class="t_text tc">
-	                                        ${r.no }
+	                                        ${status.index+1 }
 	                                     </div>
-	                                 </td> --%>
+	                                 </td>
 	                                 <td>
 	                                     <div class="t_text tc">
 	                                        ${r.name }
@@ -194,6 +194,7 @@ function updDeleteFlag(id, deleteFlag){
 	                                 </td>
 	                             </tr>
                              </c:forEach>
+                             <tr><td colspan="6" style="text-align:center;"><%@ include file="../common/pager.jsp"%></td></tr>
                          </tbody>
                      </table>
                  </div>

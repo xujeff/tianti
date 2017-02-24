@@ -8,8 +8,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jeff.tianti.common.entity.PageModel;
 import com.jeff.tianti.common.service.CommonService;
 import com.jeff.tianti.org.dao.UserDao;
+import com.jeff.tianti.org.dto.UserQueryDTO;
 import com.jeff.tianti.org.entity.Resource;
 import com.jeff.tianti.org.entity.User;
 
@@ -66,6 +68,15 @@ public class UserService extends CommonService<User,String>{
 		}
 		
 		return map;
+	}
+	
+	/**
+	 * 根据用户信息查询分页信息
+	 * @param userQueryDTO
+	 * @return
+	 */
+	public PageModel<User> queryUserPage(UserQueryDTO userQueryDTO){
+		return this.userDao.queryUserPage(userQueryDTO);
 	}
 	
 }

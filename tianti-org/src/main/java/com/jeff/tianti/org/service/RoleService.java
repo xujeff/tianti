@@ -6,8 +6,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.jeff.tianti.common.entity.PageModel;
 import com.jeff.tianti.common.service.CommonService;
 import com.jeff.tianti.org.dao.RoleDao;
+import com.jeff.tianti.org.dto.RoleQueryDTO;
 import com.jeff.tianti.org.entity.Role;
 
 @Service
@@ -39,4 +41,12 @@ public class RoleService extends CommonService<Role,String>{
 		return roleDao.findByRoleName(roleName);
 	}
 	
+	/**
+	 * 根据查询条件查询角色分页信息
+	 * @param userQueryDTO
+	 * @return
+	 */
+	public PageModel<Role> queryRolePage(RoleQueryDTO roleQueryDTO){
+		return this.roleDao.queryRolePage(roleQueryDTO);
+	}
 }
