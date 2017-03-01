@@ -25,7 +25,7 @@ $(function(){
 	$("a[name='first']").bind("click",function(event){
 		event.preventDefault();
 		$("input[name='currentPage']").val(1);
-		pageAction();
+		pageAction($("#currentPage").val());
 	});
 	$("a[name='prev']").bind("click",function(event){
 		event.preventDefault();
@@ -34,7 +34,7 @@ $(function(){
 		}else{
 			$("input[name='currentPage']").val($("input[name='currentPage']").val());
 		}
-		pageAction();
+		pageAction($("#currentPage").val());
 	});
 	$("a[name='next']").bind("click",function(event){
 		event.preventDefault();
@@ -45,34 +45,24 @@ $(function(){
 		}else{
 			$("input[name='currentPage']").val(currentPage);
 		}
-		pageAction();
+		pageAction($("#currentPage").val());
 	});
 	$("a[name='doNumberPage']").bind("click",function(event){
 		event.preventDefault();
 		$("input[name='currentPage']").val($(this).html());
-		pageAction();
+		pageAction($("#currentPage").val());
 	});
 	$("a[name='last']").bind("click",function(event){
 		event.preventDefault();
 		$("input[name='currentPage']").val($("#totalPage").val());
-		pageAction();
-	});
-	
-	$('a[name="doMyPage"]').bind("click",function(e){
-		$("input[name='currentPage']").val($("#myPageNumber").val());
-		pageAction();
+		pageAction($("#currentPage").val());
 	});
 });
-function pageAction(){
-	var _form = $("form");
-	_form.attr("action",$("button[method='list']").attr("method"));
-	_form.submit();
-}
-function toEditCurrPage(url){
-	
-	var _form = $("form");
-	_form.attr("action",url);
-	_form.submit();
+function pageAction(currentPage){
+	var action = $("#queryForm").attr("action");
+	action+="?currentPage="+currentPage;
+	$("#queryForm").attr("action", action);
+	$("#queryForm").submit();
 }
 </script>
 
@@ -83,13 +73,8 @@ function toEditCurrPage(url){
 	<div style="text-align: right; border: 0;padding: 4px 12px;" class="pageDiv">
 		<input type="hidden" name="currentPage" id="currentPage" value="${page.currentPage }">
 		<input type="hidden" id="totalPage" value="${page.totalPage }">
-		<pg:pager url="${pageContext.request.contextPath}?currentPage=${pageNumber}" items="${page.totalCount}"
-			export="currentPageNumber=pageNumber"
-			maxPageItems="${page.pageSize}" maxIndexPages="1000" isOffset="true">
-					总共：${page.totalCount}条,共:${page.totalPage}页
-					<pg:param name="cc" />
-			<input type="text" id="myPageNumber" style="width:2%" value="${page.currentPage }" style="color:green;">
-			<a name="doMyPage" class="pageLink">跳转</a>
+		<pg:pager url="#" items="${page.totalCount}" maxPageItems="${page.pageSize}" maxIndexPages="1000" isOffset="true">
+		          总共：${page.totalCount}条,共:${page.totalPage}页			
 			<pg:first>
 				<a name="first" href="#" class="pageLink">首页</a>
 			</pg:first>
