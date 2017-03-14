@@ -181,7 +181,9 @@ public class GenCodeUtil {
 				FileWriter fw = new FileWriter(f);
 				fw.write("package "+commonPackage+".dao"+";"+RT_2+"import com.jeff.tianti.common.dao.CustomBaseSqlDaoImpl;"+RT_1
 						+"import com.jeff.tianti.common.entity.PageModel;"+RT_1
+						+"import java.util.HashMap;"+RT_1
 						+"import java.util.List;"+RT_1
+						+"import java.util.Map;"+RT_1
 						+"import "+commonPackage+".entity"+"."+getLastChar(cName)+";"+RT_1
 						+"import "+commonPackage+".dto"+"."+getLastChar(cName)+"QueryDTO;"+RT_1
 						+"/**"+RT_1+BLANK_1+"*"+BLANK_1+ANNOTATION_AUTHOR_PARAMTER+ author +RT_1
@@ -189,14 +191,16 @@ public class GenCodeUtil {
 						+BLANK_1+"*"+BLANK_1+ANNOTATION_DATE +getDate()+RT_1+BLANK_1+"*/"+RT_2
 						+"public class " +getLastChar(cName) +"DaoImpl extends CustomBaseSqlDaoImpl implements " +getLastChar(cName) +"DaoCustom  {"+RT_2
 						+"    public PageModel<"+getLastChar(cName)+"> query"+getLastChar(cName)+"Page("+getLastChar(cName)+"QueryDTO "+getFirstLowercase(cName)+"QueryDTO){"+RT_1
+						+"         Map<String,Object> map = new HashMap<String,Object>();"+RT_1
 						+"         StringBuilder hql = new StringBuilder();"+RT_1
 						+"         hql.append(\"select t from "+getLastChar(cName)+" t \");"+RT_1
-						+"         return this.queryForPageWithParams(hql.toString(),null,"+getFirstLowercase(cName)+"QueryDTO.getCurrentPage(),"+getFirstLowercase(cName)+"QueryDTO.getPageSize());"+RT_1
+						+"         return this.queryForPageWithParams(hql.toString(),map,"+getFirstLowercase(cName)+"QueryDTO.getCurrentPage(),"+getFirstLowercase(cName)+"QueryDTO.getPageSize());"+RT_1
 						+"    }"+RT_2
 						+"    public List<"+getLastChar(cName)+"> query"+getLastChar(cName)+"List("+getLastChar(cName)+"QueryDTO "+getFirstLowercase(cName)+"QueryDTO){"+RT_1
+						+"         Map<String,Object> map = new HashMap<String,Object>();"+RT_1
 						+"         StringBuilder hql = new StringBuilder();"+RT_1
 						+"         hql.append(\"select t from "+getLastChar(cName)+" t \");"+RT_1
-						+"         return this.queryByMapParams(hql.toString(),null);"+RT_1
+						+"         return this.queryByMapParams(hql.toString(),map);"+RT_1
 						+"    }"+RT_1
 						+RT_2+"}");
 				fw.flush();
