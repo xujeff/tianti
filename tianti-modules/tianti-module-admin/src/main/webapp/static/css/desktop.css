@@ -1,8 +1,8 @@
-@font-face { font-family: 'icomoon'; src: url('../font/icomoon.eot'); src: url('../font/icomoon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/icomoon.woff') format('woff'), /* chrome¡¢firefox */ url('../font/icomoon.ttf') format('truetype'), /* chrome¡¢firefox¡¢opera¡¢Safari, Android, iOS 4.2+*/ url('../font/icomoon.svg#ifont') format('svg'); /* IE9*/ /* iOS 4.1- */ }
+ï»¿@font-face { font-family: 'icomoon'; src: url('../font/icomoon.eot'); src: url('../font/icomoon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/icomoon.woff') format('woff'), /* chromeï¿½ï¿½firefox */ url('../font/icomoon.ttf') format('truetype'), /* chromeï¿½ï¿½firefoxï¿½ï¿½operaï¿½ï¿½Safari, Android, iOS 4.2+*/ url('../font/icomoon.svg#ifont') format('svg'); /* IE9*/ /* iOS 4.1- */ }
 
 .icon { font-family: 'icomoon'; font-style: normal; -webkit-font-smoothing: antialiased; /*-webkit-text-stroke-width: 0.2px;*/ -moz-osx-font-smoothing: grayscale; }
 
-/* ÌÚÑ¶»¥ÓéÖØ¹¹Íâ°üÒ³Ãæ¹æ·¶ V1.0 ¾«¼ò°æ£¨ÊÊÓÃÓÚÒ»°ãµÄÓÎÏ·Àà¹ÙÍø¡¢×¨Ìâ£©ÍÆ¼ö */
+/* ï¿½ï¿½Ñ¶ï¿½ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½æ·¶ V1.0 ï¿½ï¿½ï¿½ï¿½æ£¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½â£©ï¿½Æ¼ï¿½ */
 body, dl, dd, ul, ol, h1, h2, h3, h4, h5, h6, p, form, span { margin: 0; padding: 0; }
 body, button, input, select, textarea { font-size: 14px; font-family: '\5FAE\8F6F\96C5\9ED1'; color: #333; }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
@@ -68,7 +68,7 @@ a.abtn.gray { background-color: #ddd; }
 tbody tr.hightlight td { background-color: #f6f6f6 !important; transition: all 0.4s ease; -moz-transition: all 0.4s ease; -webkit-transition: all 0.4s ease; -o-transition: all 0.4s ease; }
 tbody tr td { transition: all 0.4s ease; -moz-transition: all 0.4s ease; -webkit-transition: all 0.4s ease; -o-transition: all 0.4s ease; }
 
-/* µ¯´° */
+/* ï¿½ï¿½ï¿½ï¿½ */
 .J_dialog { position: fixed; background-color: #fff; border: 1px solid #ddd; border-radius: 3px; -webkit-box-shadow: 0px 2px 4px rgba(0,0,0,0.1); -moz-box-shadow: 0px 2px 4px rgba(0,0,0,0.1); box-shadow: 0px 2px 4px rgba(0,0,0,0.1); }
     .J_dialog .d_title { padding: 0 20px; min-width: 680px; height: 50px; border-bottom: 1px solid #ddd; }
         .J_dialog .d_title .t_txt { float: left; height: 50px; line-height: 50px; font-size: 16px; }
@@ -267,7 +267,7 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
 .J_formTable { }
     .J_formTable td { padding: 6px 0; }
 
-/* ¿Ø¼þÁÐ±í */
+/* ï¿½Ø¼ï¿½ï¿½Ð±ï¿½ */
 .J_toolsBar { }
     .J_toolsBar:after { display: block; clear: both; content: ""; visibility: hidden; height: 0; }
 .J_toolsBar { zoom: 1; }
@@ -509,3 +509,15 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
 .J_null { text-align: center; }
     .J_null img { }
     .J_null p { margin-top: 10px; font-size: 18px; color: #333; }
+
+
+
+.pageDiv { text-align: center; font-size: 12px; }
+    .pageDiv span.disabled { cursor: not-allowed; }
+    .pageDiv span.current { border-color: #d15967; color: #d15967; }
+
+        .pageDiv span.current.prev { border-color: #ddd; color: #666; }
+        .pageDiv span.current.next { border-color: #ddd; color: #666; }
+    .pageDiv span { display: inline-block; *zoom: 1; *display: inline; margin: 0 6px; padding: 6px 16px; border: 1px solid #ddd; color: #666; }
+    .pageDiv a { display: inline-block; *zoom: 1; *display: inline; margin: 0 6px; padding: 6px 16px; border: 1px solid #ddd; color: #666; }
+        .pageDiv a:hover { border-color: #d15967; color: #d15967; }
