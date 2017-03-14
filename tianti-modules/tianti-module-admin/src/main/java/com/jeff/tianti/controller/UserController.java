@@ -1,12 +1,16 @@
 package com.jeff.tianti.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jeff.tianti.common.dto.AjaxResult;
 import com.jeff.tianti.common.entity.PageModel;
+import com.jeff.tianti.common.util.ExcelUtils;
 import com.jeff.tianti.common.util.Md5Util;
 import com.jeff.tianti.org.dto.RoleQueryDTO;
 import com.jeff.tianti.org.dto.UserQueryDTO;
@@ -75,6 +80,65 @@ public class UserController {
 		model.addAttribute(Constants.MENU_NAME, Constants.MENU_USER_LIST);
 		
 		return "user/user_list";
+	}
+	
+	/**
+	 * 导出用户数据
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("/export")
+	public String exportOrder(HttpServletRequest request, HttpServletResponse response){	
+		String userName = request.getParameter("userName");
+		Map<String, Object> params = new HashMap<String, Object>();
+		if(StringUtils.isNotBlank(userName)){
+			params.put("username", userName);
+		}
+
+		List<User> userList = this.userService.findUsers(params);
+		List<Map<String,Object>> list = new ArrayList<Map<String,Object>>();
+		Map<String, String> headNameMap = new LinkedHashMap<String, String>();
+		headNameMap.put("roleName", "角色");
+		headNameMap.put("userName", "账号");
+		headNameMap.put("realName", "姓名");
+		headNameMap.put("mobile", "电话号码");
+		headNameMap.put("createDate", "创建时间");
+		headNameMap.put("status", "状态");
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		if(userList != null && userList.size() > 0){
+			for(User user : userList){
+				String statusName = "正常";
+				String createDate = "";
+				String roleName = "";
+				if(StringUtils.isNotBlank(user.getDeleteFlag()) && user.getDeleteFlag().equals(User.DELETE_FLAG_DELETED)){
+					statusName = "删除";
+				}
+				
+				if(user.getCreateDate() != null){
+					createDate = sdf.format(user.getCreateDate());
+				}
+				
+				Set<Role> roleSet = user.getRoles();
+				if(roleSet != null && roleSet.size() > 0){
+					for(Role r:roleSet){
+						roleName +=r.getName()+" ";
+					}
+				}
+				Map<String,Object> map = new HashMap<String,Object>();
+				map.put("roleName", roleName);
+				map.put("userName", user.getUsername());
+				map.put("realName", user.getRealName());
+				map.put("mobile", user.getMobile());
+				map.put("createDate", createDate);
+				map.put("status", statusName);
+				list.add(map);
+			}
+		}
+		
+		ExcelUtils.exportXlsx(response, "用户数据", headNameMap, list);
+		return null;
 	}
 	
 	/**
@@ -191,6 +255,11 @@ public class UserController {
 		return ajaxResult;
 	}
 	
+	/**
+	 * 校验用户是否存在
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/ajax/validator/username")
 	@ResponseBody
 	public Map<String, Object> ajaxValidatorUsername(HttpServletRequest request){
@@ -291,6 +360,11 @@ public class UserController {
 		return "user/dialog/role_edit";
 	}
 	
+	/**
+	 * 保存角色
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/ajax/save_role")
 	@ResponseBody
 	public AjaxResult ajaxSaveRole(HttpServletRequest request){
@@ -389,7 +463,7 @@ public class UserController {
 	}
 	
 	/**
-	 * 
+	 * 逻辑操作菜单状态
 	 * @param request
 	 * @return
 	 */
@@ -414,6 +488,12 @@ public class UserController {
 		return ajaxResult;
 	}
 	
+	/**
+	 * 跳转到菜单编辑页面
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/dialog/menu_edit")
 	public String dialogMenuEdit(HttpServletRequest request, Model model){
 		
@@ -429,6 +509,11 @@ public class UserController {
 		return "user/dialog/menu_edit";
 	}
 	
+	/**
+	 * 保存菜单
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/ajax/save_menu")
 	@ResponseBody
 	public AjaxResult ajaxSaveMenu(HttpServletRequest request){
@@ -475,6 +560,12 @@ public class UserController {
 		return ajaxResult;
 	}
 	
+	/**
+	 * 跳转到修改密码
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("/update_pwd")
 	public String updatePwd(HttpServletRequest request, Model model){
 		
@@ -483,6 +574,11 @@ public class UserController {
 		return "user/update_pwd";
 	}
 	
+	/**
+	 * 保存密码
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("/ajax/save_pwd")
 	@ResponseBody
 	public AjaxResult ajaxSavePwd(HttpServletRequest request){

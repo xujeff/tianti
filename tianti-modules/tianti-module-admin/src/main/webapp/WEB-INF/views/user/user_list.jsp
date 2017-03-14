@@ -1,125 +1,41 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <%@ include file="../common/common.jsp" %>
-
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>${menu_name } - ${title }</title>
 </head>
-
 <link href="${ctx }/static/plugins/chosen_v1.6.2/chosen.css" rel="stylesheet" />
-<script src="${ctx }/static/plugins/chosen_v1.6.2/chosen.jquery.js"></script>
-
-<script type="text/javascript">
-
-function myEdit(id){
-	var loadIdx = layer.load();
-	var title = '添加用户';
-	if(!id){
-		id = '';
-	}else{
-		title = '修改用户';
-	}
-	$.post('${ctx}/user/dialog/edit?id='+id, {}, function(str){
-		
-		layer.close(loadIdx);
-		
-		layer.open({
-			title : title,
-			type : 1,
-			area : ['600px', '400px'],
-			content : str,
-			btn : ['确定', '取消'],
-			yes : function(index, layero){
-				$('#editForm').submit();
-			},
-			btn2 : function(index, layero){
-			    layer.close(index);
-			}
-		});
-	});
-}
-
-
-function mySubmit(){
-	$('#editForm').submit();
-}
-
-function myQuery(){
-	$('#queryForm').submit();
-}
-
-
-function updStatus(id, status){
-	var ids = new Array();
-	ids.push(id);
-	
-	var content = '';
-	if(status == '1'){
-		content = '确认要恢复数据吗？';
-	}else{
-		content = '确认要删除数据吗？';
-	}
-	
-	layer.confirm(content, function(index){
-		layer.close(index);
-		
-		var loadIdx = layer.load();
-		$.ajax({
-			url : '${ctx}/user/ajax/upd/status',
-			type : 'post',
-			data : {
-				'ids' : ids,
-				'status' : status
-			},
-			traditional : true,
-			success : function(result){
-				layer.close(loadIdx);
-				if(result.success){
-					layer.alert('操作成功', function(){
-						window.location.reload();
-					});
-				}else{
-					layer.alert('操作失败');
-				}
-			}
-		});
-		
-	});
-
-}
-
-</script>
-
 <body>
-
 	<%@ include file="../common/head.jsp" %>
-
     <%@ include file="../common/menu.jsp" %>
-
     <div class="J_content">
-		
 		<div class="mt20 plr20">
-			
 			<form action="${ctx }/user/list" id="queryForm" method="post">
 	        <div class="J_toolsBar clearfix">
 				<div class="t_label">账号</div>
 				<div class="t_text ml10">
-                	<input placeholder="请输入账号" type="text" name="userName" value="${userQueryDTO.userName }"/>
+                	<input placeholder="请输入账号" type="text" name="userName" id="userName" value="${userQueryDTO.userName }"/>
                 </div>
-                <div class="t_button ml10">
-               		<a class="abtn red" href="javascript:myQuery();">查询</a>
+                <div class="t_button mgl30">
+               		<a class="abtn red" href="javascript:myQuery();">
+               		   <i class="icon"></i>查询
+               		</a>
                	</div>
                	<div class="t_button ml10">
-               		<a class="abtn red" href="javascript:myEdit();">新增</a>
+               		<a class="abtn blue" href="javascript:myEdit();">
+               		   <i class="icon"></i>新增
+               		</a>
+               	</div>
+               	<div class="t_button ml10">
+               		<a class="abtn maxblue" href="javascript:myExport();">
+               			<i class="icon"></i>导出
+               		</a>
                	</div>
 			</div>
 			</form>
-			
 			<div class="J_table mt20">
-				 
                  <div class="t_table">
                      <table>
                          <thead>
@@ -219,6 +135,84 @@ function updStatus(id, status){
              </div>
 		</div>
     </div>
-
+<script src="${ctx }/static/plugins/chosen_v1.6.2/chosen.jquery.js"></script>    
+<script type="text/javascript">
+	function myEdit(id){
+		var loadIdx = layer.load();
+		var title = '添加用户';
+		if(!id){
+			id = '';
+		}else{
+			title = '修改用户';
+		}
+		$.post('${ctx}/user/dialog/edit?id='+id, {}, function(str){
+			
+			layer.close(loadIdx);
+			
+			layer.open({
+				title : title,
+				type : 1,
+				area : ['600px', '400px'],
+				content : str,
+				btn : ['确定', '取消'],
+				yes : function(index, layero){
+					$('#editForm').submit();
+				},
+				btn2 : function(index, layero){
+				    layer.close(index);
+				}
+			});
+		});
+	}
+	
+	function mySubmit(){
+		$('#editForm').submit();
+	}
+	
+	function myQuery(){
+		$('#queryForm').submit();
+	}
+	
+	function myExport(){
+		var userName = $("#userName").val();
+		window.location.href="${ctx}/user/export?userName="+userName;
+	}
+	
+	function updStatus(id, status){
+		var ids = new Array();
+		ids.push(id);
+		
+		var content = '';
+		if(status == '1'){
+			content = '确认要恢复数据吗？';
+		}else{
+			content = '确认要删除数据吗？';
+		}
+		
+		layer.confirm(content, function(index){
+			layer.close(index);
+			var loadIdx = layer.load();
+			$.ajax({
+				url : '${ctx}/user/ajax/upd/status',
+				type : 'post',
+				data : {
+					'ids' : ids,
+					'status' : status
+				},
+				traditional : true,
+				success : function(result){
+					layer.close(loadIdx);
+					if(result.success){
+						layer.alert('操作成功', function(){
+							window.location.reload();
+						});
+					}else{
+						layer.alert('操作失败');
+					}
+				}
+			});
+		});
+	}
+</script>
 </body>
 </html>
