@@ -28,11 +28,6 @@
                		    <i class="icon"></i>新增
                		</a>
                	</div>
-               	<div class="t_button ml10">
-               		<a class="abtn maxblue" href="javascript:myExport();">
-               			<i class="icon"></i>导出
-               		</a>
-               	</div>
 			</div>
 			</form>
 			<div class="J_table mt20">
