@@ -6,6 +6,7 @@
 <link href="${ctx }/static/css/desktop.css" rel="stylesheet" />
 <link href="${ctx }/static/plugins/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" />
 <link href="${ctx }/static/plugins/nice-validator-0.7.3/jquery.validator.css" rel="stylesheet" />
+<link rel="shortcut icon" href="${ctx }/static/favicon/favicon.ico">
 
 <script src="${ctx }/static/js/jquery-1.8.3.min.js" type="text/javascript"></script>
 <script src="${ctx }/static/plugins/jquery/jquery.cookie.js" type="text/javascript"></script>
