@@ -20,6 +20,7 @@
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/rolelist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)                                              
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/updatePwd.png)
 
     联系方式：xuzhexu@139.com qq交流群：422039518
     天梯的版权属于开源作者，任何人不得用于商业用途。
