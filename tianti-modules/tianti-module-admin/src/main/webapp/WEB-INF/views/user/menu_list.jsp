@@ -13,7 +13,7 @@
     <%@ include file="../common/menu.jsp" %>
     <div class="J_content">
 		<div class="mt20 plr20">
-			<form action="${ctx }/user/menu_list" id="queryForm">
+		  <form action="${ctx }/user/menu_list" id="queryForm">
 	        <div class="J_toolsBar clearfix">
 				<div class="t_label">菜单名称</div>
 				<div class="t_text ml10">
@@ -30,7 +30,6 @@
                		</a>
                	</div>
 			</div>
-			</form>
 			<div class="J_table mt20">
                  <div class="t_table">
                      <table>
@@ -106,13 +105,13 @@
 	                                 </td>
 	                                 <td>
 	                                     <div class="t_link">
-	                                         <a href="javascript:myEdit('${r.id }');">编辑</a>
+	                                         <a href="javascript:myEdit('${r.id }');"><i class="icon"></i>编辑</a>
 	                                         <c:choose>
 	                                         	<c:when test="${r.deleteFlag eq '0' }">
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');">删除</a>
+	                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');"><i class="icon"></i>删除</a>
 	                                         	</c:when>
 	                                         	<c:otherwise>
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');">恢复</a>
+	                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');"><i class="icon"></i>恢复</a>
 	                                         	</c:otherwise>
 	                                         </c:choose>
 	                                     </div>
@@ -123,6 +122,7 @@
                      </table>
                  </div>
              </div>
+            </form>
 		</div>
     </div>
 <script src="${ctx }/static/plugins/chosen_v1.6.2/chosen.jquery.js"></script>

@@ -1,17 +1,3 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : 120.25.71.62
-Source Server Version : 50616
-Source Host           : 120.25.71.62:3306
-Source Database       : tianti_stage
-
-Target Server Type    : MYSQL
-Target Server Version : 50616
-File Encoding         : 65001
-
-Date: 2017-02-07 17:31:38
-*/
 
 SET FOREIGN_KEY_CHECKS=0;
 
@@ -39,10 +25,11 @@ CREATE TABLE `org_resource` (
 -- ----------------------------
 -- Records of org_resource
 -- ----------------------------
-INSERT INTO `org_resource` VALUES ('70', null, '2016-08-17 17:06:19', '0', '2016-10-28 17:02:57', '', '权限管理', '70', 'module', '/user/list', null);
-INSERT INTO `org_resource` VALUES ('71', null, '2016-09-07 15:15:58', '0', '2016-10-28 17:03:06', '', '用户列表', '71', 'page', '/user/list', '70');
-INSERT INTO `org_resource` VALUES ('72', null, '2016-09-07 15:17:37', '0', '2016-10-28 17:03:13', '', '角色列表', '72', 'page', '/user/role_list', '70');
-INSERT INTO `org_resource` VALUES ('73', null, '2016-09-18 16:34:14', '0', '2016-10-28 17:03:19', '', '菜单列表', '73', 'page', '/user/menu_list', '70');
+INSERT INTO `org_resource` VALUES ('10', null, '2016-08-17 17:06:19', '0', '2016-10-28 17:02:57', '', '权限管理', '10', 'module', '/user/list', null);
+INSERT INTO `org_resource` VALUES ('11', null, '2016-09-07 15:15:58', '0', '2016-10-28 17:03:06', '', '用户列表', '11', 'page', '/user/list', '10');
+INSERT INTO `org_resource` VALUES ('12', null, '2016-09-07 15:17:37', '0', '2016-10-28 17:03:13', '', '角色列表', '12', 'page', '/user/role_list', '10');
+INSERT INTO `org_resource` VALUES ('13', null, '2016-09-18 16:34:14', '0', '2016-10-28 17:03:19', '', '菜单列表', '13', 'page', '/user/menu_list', '10');
+INSERT INTO `org_resource` VALUES ('90', null, '2017-03-17 15:32:19', '0', '2017-03-17 15:32:19', '', '修改密码', '90', 'module', '/user/update_pwd', null);
 
 -- ----------------------------
 -- Table structure for org_role
@@ -84,10 +71,11 @@ CREATE TABLE `org_role_resource_rel` (
 -- ----------------------------
 -- Records of org_role_resource_rel
 -- ----------------------------
-INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '70');
-INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '71');
-INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '72');
-INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '73');
+INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '10');
+INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '11');
+INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '12');
+INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '13');
+INSERT INTO `org_role_resource_rel` VALUES ('402881e457f075530157f0791e2f0000', '90');
 
 -- ----------------------------
 -- Table structure for org_user

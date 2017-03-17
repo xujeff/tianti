@@ -12,7 +12,7 @@
     <%@ include file="../common/menu.jsp" %>
     <div class="J_content">
 		<div class="mt20 plr20">
-			<form action="${ctx }/user/list" id="queryForm" method="post">
+		  <form action="${ctx }/user/list" id="queryForm" method="post">
 	        <div class="J_toolsBar clearfix">
 				<div class="t_label">账号</div>
 				<div class="t_text ml10">
@@ -33,8 +33,11 @@
                			<i class="icon"></i>导出
                		</a>
                	</div>
+               	<div class="t_label ml10">
+					记录数：<label style="color: red;" id="total">${page.totalCount }</label>
+				</div>
 			</div>
-			</form>
+			
 			<div class="J_table mt20">
                  <div class="t_table">
                      <table>
@@ -115,24 +118,25 @@
 	                                 </td>
 	                                 <td>
 	                                     <div class="t_link">
-	                                         <a href="javascript:myEdit('${u.id }');">编辑</a>
+	                                         <a href="javascript:myEdit('${u.id }');"><i class="icon"></i>编辑</a>
 	                                         <c:choose>
 	                                         	<c:when test="${u.status eq '1' }">
-	                                         		<a href="javascript:updStatus('${u.id }', '0');">删除</a>
+	                                         		<a href="javascript:updStatus('${u.id }', '0');"><i class="icon"></i>删除</a>
 	                                         	</c:when>
 	                                         	<c:otherwise>
-	                                         		<a href="javascript:updStatus('${u.id }', '1');">恢复</a>
+	                                         		<a href="javascript:updStatus('${u.id }', '1');"><i class="icon"></i>恢复</a>
 	                                         	</c:otherwise>
 	                                         </c:choose>
 	                                     </div>
 	                                 </td>
 	                             </tr>
                              </c:forEach>
-                             <tr><td colspan="8" style="text-align:center;"><%@ include file="../common/pager.jsp"%></td></tr>
                          </tbody>
                      </table>
                  </div>
+                 <%@ include file="../common/pager.jsp"%>
              </div>
+            </form>
 		</div>
     </div>
 <script src="${ctx }/static/plugins/chosen_v1.6.2/chosen.jquery.js"></script>    

@@ -64,13 +64,13 @@ public class LoginController {
 			
 			return "redirect:/user/list";
 		} catch (LockedAccountException lae) {
-			lae.printStackTrace();
+//			lae.printStackTrace();
 			model.addAttribute("msg", "账号已被禁用");
 		} catch (AuthenticationException ae) {
-			ae.printStackTrace();
+//			ae.printStackTrace();
 			model.addAttribute("msg", "账号或密码错误");
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			model.addAttribute("msg", "登录异常");
 		}
 		

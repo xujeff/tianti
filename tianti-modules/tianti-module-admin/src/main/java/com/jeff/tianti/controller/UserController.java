@@ -34,7 +34,11 @@ import com.jeff.tianti.org.service.RoleService;
 import com.jeff.tianti.org.service.UserService;
 import com.jeff.tianti.util.Constants;
 import com.jeff.tianti.util.WebHelper;
-
+/**
+ * 用户管理Controller
+ * @author Jeff Xu
+ *
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {

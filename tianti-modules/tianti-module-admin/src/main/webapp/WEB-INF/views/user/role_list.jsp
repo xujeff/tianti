@@ -12,7 +12,7 @@
     <%@ include file="../common/menu.jsp" %>
     <div class="J_content">
 		<div class="mt20 plr20">
-			<form action="${ctx }/user/role_list" id="queryForm" method="POST">
+		  <form action="${ctx }/user/role_list" id="queryForm" method="POST">
 	        <div class="J_toolsBar clearfix">
 				<div class="t_label">角色名称</div>
 				<div class="t_text ml10">
@@ -28,8 +28,10 @@
                		    <i class="icon"></i>新增
                		</a>
                	</div>
+               	<div class="t_label ml10">
+					记录数：<label style="color: red;" id="total">${page.totalCount }</label>
+				</div>
 			</div>
-			</form>
 			<div class="J_table mt20">
                  <div class="t_table">
                      <table>
@@ -92,24 +94,25 @@
 	                                 </td>
 	                                 <td>
 	                                     <div class="t_link">
-	                                         <a href="javascript:myEdit('${r.id }');">编辑</a>
+	                                         <a href="javascript:myEdit('${r.id }');"><i class="icon"></i>编辑</a>
 	                                         <c:choose>
 	                                         	<c:when test="${r.deleteFlag eq '0' }">
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');">删除</a>
+	                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');"><i class="icon"></i>删除</a>
 	                                         	</c:when>
 	                                         	<c:otherwise>
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');">恢复</a>
+	                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');"><i class="icon"></i>恢复</a>
 	                                         	</c:otherwise>
 	                                         </c:choose>
 	                                     </div>
 	                                 </td>
 	                             </tr>
                              </c:forEach>
-                             <tr><td colspan="6" style="text-align:center;"><%@ include file="../common/pager.jsp"%></td></tr>
                          </tbody>
                      </table>
                  </div>
+                 <%@ include file="../common/pager.jsp"%>
              </div>
+           </form>
 		</div>
     </div>
 <script type="text/javascript" src="${ctx }/static/plugins/zTree_v3/js/jquery.ztree.all.min.js"></script>
