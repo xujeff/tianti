@@ -7,7 +7,7 @@
 <title>${menu_name } - ${title }</title>
 </head>
 <link href="${ctx }/static/plugins/chosen_v1.6.2/chosen.css" rel="stylesheet" />
-<body>
+<body <%@ include file="../common/skin.jsp" %>>
 	<%@ include file="../common/head.jsp" %>
     <%@ include file="../common/menu.jsp" %>
     <div class="J_content">
@@ -70,67 +70,81 @@
                              </tr>
                          </thead>
                          <tbody>
-                         	<c:forEach items="${page.list }" var="u" varStatus="status">
-	                             <tr>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                        ${status.index+1 }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                        <c:forEach items="${u.roles }" var="r">
-	                                        	${r.name }
-	                                        </c:forEach>
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                        ${u.username }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         ${u.realName }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         ${u.mobile }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         <fmt:formatDate value="${u.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                 	<div class="t_text tc">
-	                                 		<c:choose>
-	                                         	<c:when test="${u.status eq '1' }">
-	                                         		<label class="normal_flag">正常</label>
-	                                         	</c:when>
-	                                         	<c:otherwise>
-	                                         		<label class="delete_flag">删除</label>
-	                                         	</c:otherwise>
-	                                         </c:choose>
-	                                 	</div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_link">
-	                                         <a href="javascript:myEdit('${u.id }');"><i class="icon"></i>编辑</a>
-	                                         <c:choose>
-	                                         	<c:when test="${u.status eq '1' }">
-	                                         		<a href="javascript:updStatus('${u.id }', '0');"><i class="icon"></i>删除</a>
-	                                         	</c:when>
-	                                         	<c:otherwise>
-	                                         		<a href="javascript:updStatus('${u.id }', '1');"><i class="icon"></i>恢复</a>
-	                                         	</c:otherwise>
-	                                         </c:choose>
-	                                     </div>
-	                                 </td>
-	                             </tr>
-                             </c:forEach>
+                            <c:choose>
+                              <c:when test="${page.list != null && page.totalCount > 0 }">
+                                 <c:forEach items="${page.list }" var="u" varStatus="status">
+		                             <tr>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                        ${status.index+1 }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                        <c:forEach items="${u.roles }" var="r">
+		                                        	${r.name }
+		                                        </c:forEach>
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                        ${u.username }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         ${u.realName }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         ${u.mobile }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         <fmt:formatDate value="${u.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                 	<div class="t_text tc">
+		                                 		<c:choose>
+		                                         	<c:when test="${u.status eq '1' }">
+		                                         		<label class="normal_flag">正常</label>
+		                                         	</c:when>
+		                                         	<c:otherwise>
+		                                         		<label class="delete_flag">删除</label>
+		                                         	</c:otherwise>
+		                                         </c:choose>
+		                                 	</div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_link">
+		                                         <a href="javascript:myEdit('${u.id }');"><i class="icon"></i>编辑</a>
+		                                         <c:choose>
+		                                         	<c:when test="${u.status eq '1' }">
+		                                         		<a href="javascript:updStatus('${u.id }', '0');"><i class="icon"></i>删除</a>
+		                                         	</c:when>
+		                                         	<c:otherwise>
+		                                         		<a href="javascript:updStatus('${u.id }', '1');"><i class="icon"></i>恢复</a>
+		                                         	</c:otherwise>
+		                                         </c:choose>
+		                                     </div>
+		                                 </td>
+		                             </tr>
+	                             </c:forEach>
+                              </c:when>
+                              <c:otherwise>
+                                  <tr>
+                                    <td colspan="8">
+	                                  <div class="J_null mt40">
+								            <img src="${ctx }/static/images/null.png">
+								            <p>暂无相关数据</p>
+								      </div>
+								    </td>
+							      </tr>
+                              </c:otherwise>
+                            </c:choose>
                          </tbody>
                      </table>
                  </div>

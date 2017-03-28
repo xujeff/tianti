@@ -7,7 +7,7 @@
 <title>角色列表 - ${title }</title>
 </head>
 <link href="${ctx }/static/plugins/zTree_v3/css/zTreeStyle.css" rel="stylesheet" />
-<body>
+<body <%@ include file="../common/skin.jsp" %>>
 	<%@ include file="../common/head.jsp" %>
     <%@ include file="../common/menu.jsp" %>
     <div class="J_content">
@@ -58,55 +58,69 @@
                              </tr>
                          </thead>
                          <tbody>
-                         	<c:forEach items="${page.list }" var="r" varStatus="status">
-	                             <tr>
-	                                 <td class="first">
-	                                 	 <div class="t_text tc">
-	                                        ${status.index+1 }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                        ${r.name }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         ${r.description }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         <fmt:formatDate value="${r.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                 	<div class="t_text tc">
-	                                 		<c:choose>
-	                                         	<c:when test="${r.deleteFlag eq '0' }">
-	                                         		<label class="normal_flag">正常</label>
-	                                         	</c:when>
-	                                         	<c:otherwise>
-	                                         		<label class="delete_flag">删除</label>
-	                                         	</c:otherwise>
-	                                         </c:choose>
-	                                 	</div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_link">
-	                                         <a href="javascript:myEdit('${r.id }');"><i class="icon"></i>编辑</a>
-	                                         <c:choose>
-	                                         	<c:when test="${r.deleteFlag eq '0' }">
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');"><i class="icon"></i>删除</a>
-	                                         	</c:when>
-	                                         	<c:otherwise>
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');"><i class="icon"></i>恢复</a>
-	                                         	</c:otherwise>
-	                                         </c:choose>
-	                                     </div>
-	                                 </td>
-	                             </tr>
-                             </c:forEach>
+                            <c:choose>
+                              <c:when test="${page.list != null && page.totalCount > 0 }">
+                                 <c:forEach items="${page.list }" var="r" varStatus="status">
+		                             <tr>
+		                                 <td class="first">
+		                                 	 <div class="t_text tc">
+		                                        ${status.index+1 }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                        ${r.name }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         ${r.description }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         <fmt:formatDate value="${r.createDate }" pattern="yyyy-MM-dd HH:mm:ss"/>
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                 	<div class="t_text tc">
+		                                 		<c:choose>
+		                                         	<c:when test="${r.deleteFlag eq '0' }">
+		                                         		<label class="normal_flag">正常</label>
+		                                         	</c:when>
+		                                         	<c:otherwise>
+		                                         		<label class="delete_flag">删除</label>
+		                                         	</c:otherwise>
+		                                         </c:choose>
+		                                 	</div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_link">
+		                                         <a href="javascript:myEdit('${r.id }');"><i class="icon"></i>编辑</a>
+		                                         <c:choose>
+		                                         	<c:when test="${r.deleteFlag eq '0' }">
+		                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');"><i class="icon"></i>删除</a>
+		                                         	</c:when>
+		                                         	<c:otherwise>
+		                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');"><i class="icon"></i>恢复</a>
+		                                         	</c:otherwise>
+		                                         </c:choose>
+		                                     </div>
+		                                 </td>
+		                             </tr>
+	                             </c:forEach>
+                              </c:when>
+                              <c:otherwise>
+                                  <tr>
+                                    <td colspan="6">
+	                                  <div class="J_null mt40">
+								            <img src="${ctx }/static/images/null.png">
+								            <p>暂无相关数据</p>
+								      </div>
+								    </td>
+							      </tr>
+                              </c:otherwise>
+                            </c:choose>
                          </tbody>
                      </table>
                  </div>

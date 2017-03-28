@@ -2,13 +2,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%@ include file="../common/common.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>${menu_name } - ${title }</title>
 </head>
 <link href="${ctx }/static/plugins/chosen_v1.6.2/chosen.css" rel="stylesheet" />
 
-<body>
+<body <%@ include file="../common/skin.jsp" %>>
 	<%@ include file="../common/head.jsp" %>
     <%@ include file="../common/menu.jsp" %>
     <div class="J_content">
@@ -59,65 +60,79 @@
                              </tr>
                          </thead>
                          <tbody>
-                         	<c:forEach items="${resources }" var="r">
-	                             <tr>
-	                                 <td class="first">
-	                                 	 <div class="t_text tc">
-	                                        ${r.orderNo }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-                                        	<i class="icon">${r.icon }</i>
-                                        	<span>${r.name }</span>
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         <c:choose>
-	                                         	<c:when test="${r.type eq 'module' }">模块</c:when>
-	                                         	<c:when test="${r.type eq 'page' }">页面</c:when>
-	                                         </c:choose>
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         ${r.url }
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_text tc">
-	                                         <i class="icon">${r.parent.icon }</i>
-	                                         <span>${r.parent.name }</span>
-	                                     </div>
-	                                 </td>
-	                                 <td>
-	                                 	<div class="t_text tc">
-	                                 		<c:choose>
-	                                         	<c:when test="${r.deleteFlag eq '0' }">
-	                                         		<label class="normal_flag">正常</label>
-	                                         	</c:when>
-	                                         	<c:otherwise>
-	                                         		<label class="delete_flag">删除</label>
-	                                         	</c:otherwise>
-	                                         </c:choose>
-	                                 	</div>
-	                                 </td>
-	                                 <td>
-	                                     <div class="t_link">
-	                                         <a href="javascript:myEdit('${r.id }');"><i class="icon"></i>编辑</a>
-	                                         <c:choose>
-	                                         	<c:when test="${r.deleteFlag eq '0' }">
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');"><i class="icon"></i>删除</a>
-	                                         	</c:when>
-	                                         	<c:otherwise>
-	                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');"><i class="icon"></i>恢复</a>
-	                                         	</c:otherwise>
-	                                         </c:choose>
-	                                     </div>
-	                                 </td>
-	                             </tr>
-                             </c:forEach>
+                            <c:choose>
+                              <c:when test="${(resources)!= null && fn:length(resources) > 0}">
+                                 <c:forEach items="${resources }" var="r">
+		                             <tr>
+		                                 <td class="first">
+		                                 	 <div class="t_text tc">
+		                                        ${r.orderNo }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+	                                        	<i class="icon">${r.icon }</i>
+	                                        	<span>${r.name }</span>
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         <c:choose>
+		                                         	<c:when test="${r.type eq 'module' }">模块</c:when>
+		                                         	<c:when test="${r.type eq 'page' }">页面</c:when>
+		                                         </c:choose>
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         ${r.url }
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_text tc">
+		                                         <i class="icon">${r.parent.icon }</i>
+		                                         <span>${r.parent.name }</span>
+		                                     </div>
+		                                 </td>
+		                                 <td>
+		                                 	<div class="t_text tc">
+		                                 		<c:choose>
+		                                         	<c:when test="${r.deleteFlag eq '0' }">
+		                                         		<label class="normal_flag">正常</label>
+		                                         	</c:when>
+		                                         	<c:otherwise>
+		                                         		<label class="delete_flag">删除</label>
+		                                         	</c:otherwise>
+		                                         </c:choose>
+		                                 	</div>
+		                                 </td>
+		                                 <td>
+		                                     <div class="t_link">
+		                                         <a href="javascript:myEdit('${r.id }');"><i class="icon"></i>编辑</a>
+		                                         <c:choose>
+		                                         	<c:when test="${r.deleteFlag eq '0' }">
+		                                         		<a href="javascript:updDeleteFlag('${r.id }', '1');"><i class="icon"></i>删除</a>
+		                                         	</c:when>
+		                                         	<c:otherwise>
+		                                         		<a href="javascript:updDeleteFlag('${r.id }', '0');"><i class="icon"></i>恢复</a>
+		                                         	</c:otherwise>
+		                                         </c:choose>
+		                                     </div>
+		                                 </td>
+		                             </tr>
+	                             </c:forEach>
+                              </c:when>
+                              <c:otherwise>
+                                 <tr>
+                                    <td colspan="7">
+	                                  <div class="J_null mt40">
+								            <img src="${ctx }/static/images/null.png">
+								            <p>暂无相关数据</p>
+								      </div>
+								    </td>
+							      </tr>
+                              </c:otherwise>
+                            </c:choose>
                          </tbody>
                      </table>
                  </div>

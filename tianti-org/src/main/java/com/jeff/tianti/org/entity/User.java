@@ -33,6 +33,8 @@ public class User extends BaseEntity{
 	
 	public final static Integer STATUS_NO = 0; //不可用
 	
+	public final static Integer USER_TYPE_INS = 1; //机构用户
+	
 	private String username;					//用户名称
 	
 	private String password;					//密码
@@ -48,6 +50,8 @@ public class User extends BaseEntity{
 	private Set<Role> roles;					//拥有角色
 	
 	private Integer type;						//0 为管理员
+	
+	private String currentSkin;                 //当前皮肤
 	
 	@Column(name = "username",length=50)
 	public String getUsername() {
@@ -124,6 +128,15 @@ public class User extends BaseEntity{
 
 	public void setType(Integer type) {
 		this.type = type;
+	}
+
+	@Column(name = "current_skin",length = 16)
+	public String getCurrentSkin() {
+		return currentSkin;
+	}
+
+	public void setCurrentSkin(String currentSkin) {
+		this.currentSkin = currentSkin;
 	}
 
 }

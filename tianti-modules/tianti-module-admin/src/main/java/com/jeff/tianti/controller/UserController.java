@@ -234,7 +234,7 @@ public class UserController {
 	
 	
 	/**
-	 * 修改用户密码
+	 * 修改用户状态
 	 * @param request
 	 * @return
 	 */
@@ -256,6 +256,45 @@ public class UserController {
 			e.printStackTrace();
 		}
 		
+		return ajaxResult;
+	}
+	
+	/**
+	 * 皮肤列表
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/skin/list")
+	public String skinList(HttpServletRequest request,Model model){
+		model.addAttribute(Constants.MENU_NAME, Constants.MENU_UPDATE_SKIN);
+		return "/user/skin_list";
+	}
+	
+	/**
+	 * 修改皮肤
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping("/ajax/upd/skin")
+	@ResponseBody
+	public AjaxResult ajaxUpdSkin(HttpServletRequest request){
+		AjaxResult ajaxResult = new AjaxResult();
+		ajaxResult.setSuccess(false);
+		
+		try {
+			String currentSkin = request.getParameter("skin");
+			User user = (User)request.getSession().getAttribute(WebHelper.SESSION_LOGIN_USER);
+			if(user != null){
+				user.setCurrentSkin(currentSkin);
+				this.userService.update(user);
+				request.getSession().setAttribute(WebHelper.SESSION_LOGIN_USER, user);
+				ajaxResult.setSuccess(true);
+			}
+						
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return ajaxResult;
 	}
 	

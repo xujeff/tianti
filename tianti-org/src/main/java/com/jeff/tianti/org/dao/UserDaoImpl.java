@@ -43,7 +43,7 @@ public class UserDaoImpl extends CustomBaseSqlDaoImpl implements SystemUserDao{
 	public PageModel<User> queryUserPage(UserQueryDTO userQueryDTO){
 		Map<String,Object> params = new HashMap<String,Object>();
 		StringBuilder hql = new StringBuilder();
-		hql.append(" select u from User u where u.deleteFlag = 0");
+		hql.append(" select u from User u where 1=1 ");
 		if(StringUtils.isNotBlank(userQueryDTO.getUserName())){
 			hql.append(" and u.username like :username ");
 			params.put("username", "%"+userQueryDTO.getUserName()+"%");
