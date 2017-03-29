@@ -19,19 +19,19 @@
      2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。<br>
      3、后台中所用到的图标是从font文件夹里面选择copy进去的，font文件夹在聊天群里面拥有。<br>
   ## 项目概览：<br>
-  ## 天梯登陆页面：<br>
+  ## 天梯登陆页面：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)  
-  ## 天梯蓝风格（默认）：<br>
+  ## 天梯蓝风格（默认）：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/userlist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/rolelist.png)
-    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)                                              
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/menulist.png)                                           
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/roleset.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/updatePwd.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/skin.png)
-  ## 天梯红风格：<br>
+  ## 天梯红风格：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/userlist.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/rolelist.png)
-    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/menulist.png)                                              
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/menulist.png)                                       
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/roleSet.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/updatePwd.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/skin.png)
