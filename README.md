@@ -7,17 +7,17 @@
      联系方式：xuzhexu@139.com qq交流群：422039518<br>
      天梯的版权属于开源作者，任何人不得用于商业用途。<br>
   技术选型：<br>
-     Spring Data JPA、Hibernate、Shiro、 Spring MVC、Layer、Mysql等。
+     Spring Data JPA、Hibernate、Shiro、 Spring MVC、Layer、Mysql等。<br>
   项目结构：<br>
-     tianti-common：系统基础服务抽象，包括entity、dao和service的基础抽象；
-     tianti-org：用户权限模块服务实现；
-     tianti-module-admin：后台web项目实现；
+     tianti-common：系统基础服务抽象，包括entity、dao和service的基础抽象；<br>
+     tianti-org：用户权限模块服务实现；<br>
+     tianti-module-admin：后台web项目实现；<br>
   后续计划：<br>
-     开发一个免费开源的JAVA的CMS系统，预计四月份发布，敬请期待。
+     开发一个免费开源的JAVA的CMS系统，预计四月份发布，敬请期待。<br>
   使用说明：<br>
-     1、数据库使用mysql，初始化脚本位于tianti-module-admin中的src/main/webapp/scripts/tianti_stage.sql。
-     2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。
-     3、后台中所用到的图标是从font文件夹里面选择copy进去的，font文件夹在聊天群里面拥有。
+     1、数据库使用mysql，初始化脚本位于tianti-module-admin中的src/main/webapp/scripts/tianti_stage.sql。<br>
+     2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。<br>
+     3、后台中所用到的图标是从font文件夹里面选择copy进去的，font文件夹在聊天群里面拥有。<br>
   项目概览：<br>
   天梯登陆页面：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)  
