@@ -33,14 +33,241 @@
 	<jstl.version>1.2</jstl.version>
   </properties>
   
+  <!-- 描述项目的所有依赖 -->
+  <dependencies>
+    <!-- Spring相关项目依赖 start -->
+      <!-- Spring核心依赖 start -->
+      <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId><!-- 包含Spring框架基本的核心工具类 -->
+			<version>${spring.version}</version>
+	  </dependency>
+	  <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-beans</artifactId><!-- springIoC（依赖注入）的基础实现 -->
+	        <version>${spring.version}</version>
+	  </dependency>
+	  <dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-context</artifactId><!-- spring 提供在基础 IoC 功能上的扩展服务 -->
+	        <version>${spring.version}</version>
+	  </dependency>
+	  <!-- Spring核心依赖 end -->
+	  <!-- spring 持久层依赖 start -->
+	   <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId><!-- 封装了spring对于事物的控制  -->
+			<version>${spring.version}</version>
+	   </dependency>
+	   <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId><!-- 包含对Spring对JDBC数据访问进行封装的所有类  -->
+			<version>${spring.version}</version>
+	   </dependency>
+	  <!-- spring 持久层依赖 end -->
+	  <!-- Spring web相关依赖 start -->
+	   <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId><!-- 包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入 WebApplicationContext 特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类 -->
+			<version>${spring.version}</version>
+	   </dependency>
+	   <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId><!-- Spring Web MVC是一种基于Java的实现了Web MVC设计模式的请求驱动类型的轻量级Web框架 -->
+			<version>${spring.version}</version>
+	   </dependency>
+	   <!-- Spring web相关依赖 end -->
+	   <!-- Spring 其它依赖 -->
+		<dependency>
+			<groupId>org.springframework</groupId><!-- spring面向切面编程，提供AOP（面向切面编程） -->
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>	
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>1.8.10</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.data</groupId>
+		    <artifactId>spring-data-jpa</artifactId>
+		    <version>1.5.2.RELEASE</version>
+		</dependency>
+		<!-- Spring其他依赖  end-->
+    <!-- Spring相关项目依赖 end -->
+    <!-- hibernate相关项目依赖 start -->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${hibernate.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate.common</groupId>
+        <artifactId>hibernate-commons-annotations</artifactId>
+        <version>${hibernate.annotations.version}</version>
+    </dependency>
+    <dependency>
+       <groupId>org.hibernate.javax.persistence</groupId>
+       <artifactId>hibernate-jpa-2.1-api</artifactId>
+       <version>1.0.0.Final</version>
+    </dependency>
+    <!-- hibernate相关项目依赖 end -->
+    <!-- mysql数据库相关依赖 start -->
+    <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId><!-- 导入Mysql数据库驱动包 -->
+			<version>${mysql.driver.version}</version>
+	</dependency>
+	<!-- mysql数据库相关依赖 end -->
+	<!-- log日志相关依赖 start -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>1.2.17</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId><!-- slf4j -->
+		<version>${slf4j.version}</version>
+	</dependency>
+	<!-- log日志相关依赖 end -->
+	<!-- servlet atart -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>javax.servlet-api</artifactId><!-- j2ee web spec -->
+		<version>${servlet.version}</version>
+	</dependency>
+	<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId><!-- JSTL标签类 -->
+			<version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+		    <groupId>javax.validation</groupId>
+		    <artifactId>validation-api</artifactId>
+		    <version>1.1.0.Final</version>
+    </dependency>
+    <dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>jsp-api</artifactId>
+	    <version>2.2</version>
+	</dependency>
+	<!-- servlet end -->
+	<!-- shiro start -->
+	<dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-core</artifactId>
+	    <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-spring</artifactId>
+	    <version>${shiro.version}</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.shiro</groupId>
+	    <artifactId>shiro-web</artifactId>
+	    <version>${shiro.version}</version>
+	</dependency>
+    <!-- shiro end -->
+    <!-- jackson start -->
+    <dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-core</artifactId>
+	    <version>2.8.5</version>
+	</dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.8.5</version>
+	</dependency>
+   <!-- jackson end -->
+	<!-- POI start -->
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi</artifactId>
+	    <version>${poi.version}</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml</artifactId>
+	    <version>${poi.version}</version>
+	</dependency>
+	<dependency>
+	    <groupId>org.apache.poi</groupId>
+	    <artifactId>poi-ooxml-schemas</artifactId>
+	    <version>${poi.version}</version>
+	</dependency>
+    <!-- POI end -->
+	<!-- commons-lang start -->
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.4</version>
+    </dependency>
+    <dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.3</version>
+	</dependency>
+    <!-- commons-lang end -->
+    <!-- tomcat jdbc start -->
+    <dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-jdbc</artifactId>
+	    <version>8.0.33</version>
+    </dependency>
+    <dependency>
+	    <groupId>org.apache.tomcat</groupId>
+	    <artifactId>tomcat-juli</artifactId>
+	    <version>8.0.33</version>
+    </dependency>
+    <!-- tomcat jdbc end -->
+    <!-- ehcache start -->
+    <dependency>
+	    <groupId>net.sf.ehcache.internal</groupId>
+	    <artifactId>ehcache-core</artifactId>
+	    <version>2.10.0</version>
+	</dependency>
+	<dependency>
+	    <groupId>net.sf.ehcache</groupId>
+	    <artifactId>ehcache-web</artifactId>
+	    <version>2.0.4</version>
+	</dependency>
+	<!-- ehcache end -->
+    <!-- 单元测试框架 start -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- 单元测试框架 end -->
+  </dependencies>
+  
   <build>  
 	    <plugins>  
 	        <plugin>  
 	            <groupId>org.apache.maven.plugins</groupId>  
 	            <artifactId>maven-compiler-plugin</artifactId>  
 	            <configuration>  
-	                <source>1.7</source>  
-	                <target>1.7</target>  
+	                <source>1.8</source>  
+	                <target>1.8</target>  
 	            </configuration>  
 	        </plugin>  
 	    </plugins>  
