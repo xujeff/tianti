@@ -24,6 +24,7 @@
        2.2、tianti-org：用户权限模块服务实现；
        2.3、tianti-module-admin：后台web项目实现；
      3、使用说明：
+      3.0、本项目JDK默认显示的是1.7，用户可以自行选择1.7+。
       3.1、数据库使用mysql，初始化脚本位于tianti-module-admin中的src/main/webapp/scripts/tianti_stage.sql。
       3.2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。
       3.3、后台中所用到的图标是从font文件夹里面选择copy进去的，font文件夹在聊天群里面拥有。
