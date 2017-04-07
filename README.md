@@ -45,4 +45,5 @@
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/roleSet.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/updatePwd.png)
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/red/skin.png)
+    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  
     
