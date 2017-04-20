@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jeff</groupId>
@@ -8,12 +9,13 @@
   	<module>tianti-common</module>
   	<module>tianti-org</module>
   	<module>tianti-modules</module>
+    <module>tianti-cms</module>
   </modules>
   <!-- 主要依赖库的版本定义 -->
   <properties>
-    <!-- 定义资源文件的编码格式 -->
+    <!-- 定义资源文件的编码格�?-->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- 依赖库版本定义 -->
+    <!-- 依赖库版本定�?-->
     <tianti.version>1.0.0</tianti.version>
     <junit.version>4.12</junit.version>
     <spring.version>4.2.5.RELEASE</spring.version>
@@ -33,7 +35,7 @@
 	<jstl.version>1.2</jstl.version>
   </properties>
   
-  <!-- 描述项目的所有依赖 -->
+  <!-- 描述项目的所有依�?-->
   <dependencies>
     <!-- Spring相关项目依赖 start -->
       <!-- Spring核心依赖 start -->
@@ -44,19 +46,19 @@
 	  </dependency>
 	  <dependency>
 	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-beans</artifactId><!-- springIoC（依赖注入）的基础实现 -->
+	        <artifactId>spring-beans</artifactId><!-- springIoC（依赖注入）的基�?���?-->
 	        <version>${spring.version}</version>
 	  </dependency>
 	  <dependency>
 	        <groupId>org.springframework</groupId>
-	        <artifactId>spring-context</artifactId><!-- spring 提供在基础 IoC 功能上的扩展服务 -->
+	        <artifactId>spring-context</artifactId><!-- spring 提供在基�?IoC 功能上的扩展服务 -->
 	        <version>${spring.version}</version>
 	  </dependency>
 	  <!-- Spring核心依赖 end -->
-	  <!-- spring 持久层依赖 start -->
+	  <!-- spring 持久层依�?start -->
 	   <dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-tx</artifactId><!-- 封装了spring对于事物的控制  -->
+			<artifactId>spring-tx</artifactId><!-- 封装了spring对于事物的控�? -->
 			<version>${spring.version}</version>
 	   </dependency>
 	   <dependency>
@@ -64,11 +66,11 @@
 			<artifactId>spring-jdbc</artifactId><!-- 包含对Spring对JDBC数据访问进行封装的所有类  -->
 			<version>${spring.version}</version>
 	   </dependency>
-	  <!-- spring 持久层依赖 end -->
+	  <!-- spring 持久层依�?end -->
 	  <!-- Spring web相关依赖 start -->
 	   <dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId><!-- 包含Web应用开发时，用到Spring框架时所需的核心类，包括自动载入 WebApplicationContext 特性的类、Struts与JSF集成类、文件上传的支持类、Filter类和大量工具辅助类 -->
+			<artifactId>spring-web</artifactId><!-- 包含Web应用�?��时，用到Spring框架时所�?��核心类，包括自动载入 WebApplicationContext 特�?的类、Struts与JSF集成类�?文件上传的支持类、Filter类和大量工具辅助�?-->
 			<version>${spring.version}</version>
 	   </dependency>
 	   <dependency>
@@ -127,13 +129,13 @@
        <version>1.0.0.Final</version>
     </dependency>
     <!-- hibernate相关项目依赖 end -->
-    <!-- mysql数据库相关依赖 start -->
+    <!-- mysql数据库相关依�?start -->
     <dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId><!-- 导入Mysql数据库驱动包 -->
 			<version>${mysql.driver.version}</version>
 	</dependency>
-	<!-- mysql数据库相关依赖 end -->
+	<!-- mysql数据库相关依�?end -->
 	<!-- log日志相关依赖 start -->
 	<dependency>
 	    <groupId>log4j</groupId>
@@ -154,7 +156,7 @@
 	</dependency>
 	<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId><!-- JSTL标签类 -->
+			<artifactId>jstl</artifactId><!-- JSTL标签�?-->
 			<version>${jstl.version}</version>
     </dependency>
     <dependency>

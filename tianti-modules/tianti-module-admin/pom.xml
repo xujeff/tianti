@@ -24,7 +24,17 @@
 			<artifactId>tianti-org</artifactId>
 			<version>${tianti.version}</version>
 	  </dependency>
-    
+	  
+	  <dependency>
+			<groupId>com.jeff.tianti.cms</groupId>
+			<artifactId>tianti-cms</artifactId>
+			<version>${tianti.version}</version>
+	  </dependency>
+      <dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20160810</version>
+	  </dependency>
     <!-- 该jar包引入自本地项目 -->
     <dependency>
 	  <groupId>org.springside</groupId>  
@@ -46,6 +56,13 @@
 	  <version>1.0.0</version>  
 	  <scope>system</scope>  
 	  <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/pager-taglib.jar</systemPath>  
+	</dependency>
+	<dependency>
+			<groupId>com.baidu</groupId>
+			<artifactId>ueditor</artifactId>
+			<version>1.1.1</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ueditor-1.1.1.jar</systemPath>
 	</dependency>
   </dependencies>
   <build>

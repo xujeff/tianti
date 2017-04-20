@@ -73,6 +73,9 @@
 	        	 /index = anon
 	        	 /error_page = anon
 	        	 /static/** = anon
+	        	 /ueditor/** = anon
+	        	 /uploads/** = anon
+	        	 /upload/** = anon
 	             /do_login = anon
 	             /login = anon
 	             /forget**/** = anon

@@ -1,4 +1,6 @@
-﻿@font-face { font-family: 'icomoon'; src: url('../font/icomoon.eot'); src: url('../font/icomoon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/icomoon.woff') format('woff'), /* chrome��firefox */ url('../font/icomoon.ttf') format('truetype'), /* chrome��firefox��opera��Safari, Android, iOS 4.2+*/ url('../font/icomoon.svg#ifont') format('svg'); /* IE9*/ /* iOS 4.1- */ }
+﻿/* 更新 2017-04-19 */
+
+@font-face { font-family: 'icomoon'; src: url('../font/icomoon.eot'); src: url('../font/icomoon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('../font/icomoon.woff') format('woff'), /* chrome��firefox */ url('../font/icomoon.ttf') format('truetype'), /* chrome��firefox��opera��Safari, Android, iOS 4.2+*/ url('../font/icomoon.svg#ifont') format('svg'); /* IE9*/ /* iOS 4.1- */ }
 
 .icon { font-family: 'icomoon'; font-style: normal; -webkit-font-smoothing: antialiased; /*-webkit-text-stroke-width: 0.2px;*/ -moz-osx-font-smoothing: grayscale; }
 
@@ -78,9 +80,9 @@ tbody tr td { transition: all 0.4s ease; -moz-transition: all 0.4s ease; -webkit
     .J_dialog .d_footer { margin-top: 20px; padding-bottom: 24px; text-align: center; }
         .J_dialog .d_footer a { display: inline-block; *zoom: 1; *display: inline; margin: 0 10px; padding: 0 50px; height: 36px; line-height: 36px; border-radius: 18px; color: #fff; }
 
-.J_loginHeader { display: none; position: absolute; left: 0; top: 0; width: 100%; height: 110px; }
-    .J_loginHeader .l_inner { margin: 0 auto; width: 1000px; }
-        .J_loginHeader .l_inner .i_logo { margin-top: 20px; }
+.J_loginHeader { position: absolute; left: 0; top: 0; width: 100%; height: 100px; background-color: #fff; }
+    .J_loginHeader .l_inner { margin: 0 auto; width: 1200px; }
+        .J_loginHeader .l_inner .i_logo { margin-top: 6px; }
             .J_loginHeader .l_inner .i_logo a { }
                 .J_loginHeader .l_inner .i_logo a img { vertical-align: top; }
 
@@ -88,7 +90,7 @@ tbody tr td { transition: all 0.4s ease; -moz-transition: all 0.4s ease; -webkit
 
 .J_loginMain { height: 100%; background: url(../images/login_bg.jpg) no-repeat center center; background-size: 110% auto; }
     .J_loginMain .l_inner { padding-top: 1px; margin: 0 auto; width: 1000px; }
-        .J_loginMain .l_inner .i_main { position: absolute; left: 50%; top: 50%; margin-left: -260px; margin-top: -220px; padding: 0 40px 40px; width: 440px; background-color: #fff; background-color: rgba(255,255,255,0.8); border-top: 3px solid #0096e0; -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1); box-shadow: 0 15px 30px rgba(0,0,0,0.1); -webkit-transform: translate3d(0, -2px, 0); transform: translate3d(0, -2px, 0); }
+        .J_loginMain .l_inner .i_main { position: absolute; left: 50%; top: 50%; margin-left: -260px; margin-top: -220px; padding: 0 40px 40px; width: 440px; background-color: #fff; background-color: rgba(255,255,255,0.9); border-top: 3px solid #0096e0; -webkit-box-shadow: 0 15px 30px rgba(0,0,0,0.1); box-shadow: 0 15px 30px rgba(0,0,0,0.1); -webkit-transform: translate3d(0, -2px, 0); transform: translate3d(0, -2px, 0); }
             .J_loginMain .l_inner .i_main .m_txt { padding: 30px 0 16px; text-align: center; font-size: 20px; color: #0096e0; }
             .J_loginMain .l_inner .i_main .m_input { margin-top: 20px; padding: 0 20px; height: 46px; border: 1px solid #ccc; }
                 .J_loginMain .l_inner .i_main .m_input input { margin-top: 12px; width: 100%; background-color: transparent; border: 0; }
@@ -307,8 +309,8 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
 .J_toolsBar { }
     .J_toolsBar:after { display: block; clear: both; content: ""; visibility: hidden; height: 0; }
 .J_toolsBar { zoom: 1; }
-    .J_toolsBar .t_label { float: left; height: 32px; line-height: 32px; }
-    .J_toolsBar .t_text { float: left; padding: 0 10px; height: 30px; line-height: 30px; background-color: #fff; border: 1px solid #e8e8e8; }
+    .J_toolsBar .t_label { float: left; margin-top: 10px; height: 32px; line-height: 32px; }
+    .J_toolsBar .t_text { float: left; margin-top: 10px; padding: 0 10px; height: 30px; line-height: 30px; background-color: #fff; border: 1px solid #e8e8e8; }
 
         .J_toolsBar .t_text.w40 { width: 40px; }
         .J_toolsBar .t_text.w60 { width: 60px; }
@@ -338,7 +340,7 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
 
         .J_toolsBar .t_text.focus { border: 1px solid #b5dff7; background-color: #f7fbfc; }
 
-    .J_toolsBar .t_textarea { float: left; padding: 0 10px; height: 100px; line-height: 100px; background-color: #fff; border: 1px solid #e8e8e8; }
+    .J_toolsBar .t_textarea { float: left; margin-top: 10px; padding: 0 10px; height: 100px; line-height: 100px; background-color: #fff; border: 1px solid #e8e8e8; }
         .J_toolsBar .t_textarea label { display: block; }
         .J_toolsBar .t_textarea textarea { float: left; height: 95%; border: 0; resize: none; }
         .J_toolsBar .t_textarea.w100 textarea { width: 100px; }
@@ -350,7 +352,7 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
         .J_toolsBar .t_textarea.focus textarea { border: 1px solid #b5dff7; background-color: #f7fbfc; }
 
 
-    .J_toolsBar .t_select { float: left; position: relative; height: 32px; line-height: 32px; background-color: #fff; }
+    .J_toolsBar .t_select { float: left; margin-top: 10px; position: relative; height: 32px; line-height: 32px; background-color: #fff; }
         .J_toolsBar .t_select .s_tmp { padding: 0 20px; visibility: hidden; }
         .J_toolsBar .t_select .s_main { display: block; position: absolute; top: 0; left: 0; padding: 0 30px; width: auto; height: 30px; border: 1px solid #e8e8e8; background-color: #fff; z-index: 2; text-align: center; white-space: nowrap; color: #333; }
             .J_toolsBar .t_select .s_main:hover { color: #40BB8A; }
@@ -372,18 +374,18 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
         .J_toolsBar .t_select select.active { overflow: hidden; }
 
 
-    .J_toolsBar .t_opacitySelect { float: left; position: relative; height: 30px; line-height: 30px; background-color: #fff; border: 1px solid #e8e8e8; }
+    .J_toolsBar .t_opacitySelect { float: left; margin-top: 10px; position: relative; height: 30px; line-height: 30px; background-color: #fff; border: 1px solid #e8e8e8; }
         .J_toolsBar .t_opacitySelect select { padding: 0 20px 0 10px; filter: alpha(opacity=0); opacity: 0; height: 30px; }
         .J_toolsBar .t_opacitySelect span { position: absolute; top: 0; left: 0; width: 100%; height: 30px; line-height: 30px; background: url(../images/drop_down.png) no-repeat right center; text-indent: 20px; color: #666; }
         .J_toolsBar .t_opacitySelect.focus { border: 1px solid #b5dff7; background-color: #f7fbfc; }
 
-    .J_toolsBar .t_code { float: left; position: relative; height: 32px; line-height: 32px; }
+    .J_toolsBar .t_code { float: left; margin-top: 10px; position: relative; height: 32px; line-height: 32px; }
         .J_toolsBar .t_code img { height: 32px; vertical-align: top; }
 
-    .J_toolsBar .t_check { float: left; position: relative; height: 32px; line-height: 32px; }
+    .J_toolsBar .t_check { float: left; margin-top: 10px; position: relative; height: 32px; line-height: 32px; }
         .J_toolsBar .t_check input { position: relative; top: 2px; }
 
-    .J_toolsBar .t_button { float: left; position: relative; height: 32px; }
+    .J_toolsBar .t_button { float: left; margin-top: 10px; position: relative; height: 32px; }
         .J_toolsBar .t_button a { display: block; padding: 0 20px; height: 32px; line-height: 32px; border-radius: 16px; color: #fff; }
             .J_toolsBar .t_button a i { margin-right: 6px; font-size: 18px; vertical-align: middle; }
 
@@ -393,14 +395,14 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
                 .J_toolsBar .t_uploadImage .u_img .i_default .icon { font-size: 64px; color: #ddd; }
                 .J_toolsBar .t_uploadImage .u_img .i_default p { margin-top: 8px; font-size: 18px; color: #bbb; }
 
-    .J_toolsBar .t_uploadButton { float: left; position: relative; height: 32px; }
+    .J_toolsBar .t_uploadButton { float: left; margin-top: 10px; position: relative; height: 32px; }
         .J_toolsBar .t_uploadButton a { position: relative; display: block; padding: 0 16px; height: 30px; line-height: 30px; line-height: 30px; color: #666; }
             .J_toolsBar .t_uploadButton a input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; filter: alpha(opacity=0); cursor: pointer; }
             .J_toolsBar .t_uploadButton a span { cursor: pointer; }
             .J_toolsBar .t_uploadButton a i { margin-right: 6px; font-size: 18px; vertical-align: middle; }
 
 
-    .J_toolsBar .t_buttonGroup { position: relative; height: 32px; text-align: center; }
+    .J_toolsBar .t_buttonGroup { position: relative; margin-top: 10px; height: 32px; text-align: center; }
         .J_toolsBar .t_buttonGroup a { display: inline-block; *zoom: 1; *display: inline; margin: 0 10px; padding: 0 30px; height: 32px; line-height: 32px; border-radius: 16px; color: #fff; }
 
     .J_toolsBar.big { }
@@ -491,21 +493,33 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
 
 
 .J_filterGroup { }
-    .J_filterGroup .f_toolbar { padding: 16px; background-color: #f4f4f4; border: 1px solid #e8e8e8; }
-        .J_filterGroup .f_toolbar .t_text { margin: 0 6px; height: 30px; line-height: 30px; color: #333; }
+    .J_filterGroup .f_toolbar { padding: 10px; background-color: #f4f4f4; border: 1px solid #e8e8e8; }
+        .J_filterGroup .f_toolbar .t_text { margin: 0 6px; color: #333; }
 
         .J_filterGroup .f_toolbar .t_input { padding: 0 10px 0 20px; height: 28px; background-color: #fff; border: 1px solid #ddd; border-radius: 14px; }
             .J_filterGroup .f_toolbar .t_input input { margin-top: 5px; width: 110px; border: none; font-size: 12px; }
             .J_filterGroup .f_toolbar .t_input a { color: #999; }
 
     .J_filterGroup .f_main { border: 1px solid #e8e8e8; border-top: 0; }
-        .J_filterGroup .f_main .m_list { height: 400px; overflow: auto; }
-            .J_filterGroup .f_main .m_list .l_item { }
-                .J_filterGroup .f_main .m_list .l_item a { display: block; padding: 0 10px; height: 32px; line-height: 32px; color: #666; }
-                    .J_filterGroup .f_main .m_list .l_item a span { display: block; float: left; }
-                    .J_filterGroup .f_main .m_list .l_item a b { display: block; float: right; }
 
-                .J_filterGroup .f_main .m_list .l_item.current a { background-color: #d15967; color: #fff; }
+        .J_filterGroup .f_main .m_list { min-height: 300px; }
+            .J_filterGroup .f_main .m_list .m_item { height: 38px; background: url(../images/show.png) no-repeat 10px 9px; overflow: hidden; }
+                .J_filterGroup .f_main .m_list .m_item .i_default { padding-left: 40px; }
+                    .J_filterGroup .f_main .m_list .m_item .i_default a { display: block; width: 100%; height: 38px; line-height: 38px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #666; }
+                .J_filterGroup .f_main .m_list .m_item .i_menu { padding-left: 40px; }
+                    .J_filterGroup .f_main .m_list .m_item .i_menu .m_item { height: 38px; overflow: hidden; }
+                        .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_default { }
+                            .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_default a { }
+                        .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_menu { }
+                            .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_menu .m_item { }
+                                .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_menu .m_item .i_default { }
+                                    .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_menu .m_item .i_default a { }
+                                .J_filterGroup .f_main .m_list .m_item .i_menu .m_item .i_menu .m_item .i_menu { }
+
+                .J_filterGroup .f_main .m_list .m_item.open { height: auto !important; background: url(../images/hide.png) no-repeat 10px 9px !important; overflow: visible !important; }
+                    .J_filterGroup .f_main .m_list .m_item.open .i_default.current a { color: #d15967; }
+
+
 
         .J_filterGroup .f_main .m_btn { padding: 10px 0; background-color: #f4f4f4; text-align: center; }
             .J_filterGroup .f_main .m_btn a { display: inline-block; *zoom: 1; *display: inline; margin: 0 6px; color: #666; }
@@ -620,3 +634,8 @@ body.mini .J_content { left: 94px; transition: all 0.4s ease; -moz-transition: a
 
 .skin_blue a.abtn.red { background-color: #0295cb; }
     .skin_blue a.abtn.red:hover { background-color: #058ec0; }
+
+
+.skin_blue .J_filterGroup .f_main .m_list .m_item { background: url(../images/blue_show.png) no-repeat 10px 9px; }
+    .skin_blue .J_filterGroup .f_main .m_list .m_item.open { height: auto !important; background: url(../images/blue_hide.png) no-repeat 10px 9px !important; overflow: visible !important; }
+        .skin_blue .J_filterGroup .f_main .m_list .m_item.open .i_default.current a { color: #0295cb; }

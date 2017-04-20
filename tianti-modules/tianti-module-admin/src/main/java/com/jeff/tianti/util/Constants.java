@@ -10,7 +10,6 @@ public class Constants {
 	public static final String MENU_ROLE_LIST = "角色列表";
 	public static final String MENU_USER_LIST = "用户列表";
 	public static final String MENU_NAME_LIST = "菜单列表";
-	public static final String MENU_INS_LIST = "机构列表";
 	public static final String MENU_COLUMN_LIST = "栏目列表";
 	public static final String MENU_ARTICLE_LIST = "文章列表";
 	

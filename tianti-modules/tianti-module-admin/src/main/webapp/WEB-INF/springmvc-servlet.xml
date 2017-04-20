@@ -27,6 +27,8 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
         其中的"**"代表路径及其子路径       
      -->  
     <mvc:resources location="/static/" mapping="/static/**"/> 
+    <mvc:resources location="/ueditor/" mapping="/ueditor/**"/> 
+    <mvc:resources location="/uploads/" mapping="/uploads/**"/> 
   
     <!-- 配置视图解析器 -->  
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">  
@@ -42,5 +44,4 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     
     <!-- 支持上传文件 -->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>  
-    
 </beans>

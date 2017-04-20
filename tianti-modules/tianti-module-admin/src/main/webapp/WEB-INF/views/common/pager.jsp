@@ -73,7 +73,7 @@
 			}else{
 				currentPage=totalPage;
 			}
-			pageAction(totalPage);
+			pageAction(currentPage);
 		});
 		$("a[name='doNumberPage']").bind("click",function(event){
 			pageAction(currentPage);
