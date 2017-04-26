@@ -34,11 +34,14 @@
       3.5、前端项目（tianti-module-gateway）是一个静态项目，可以直接部署到web容器，支持多端自适应，采用前后端分离机制获取数    据，在/src/main/webapp/static/js/config.js文件里分别配置接口地址和后台项目地址;
   
   前端项目概览：<br>
-     PC：
+     PC：<br>
      ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/index.png)  
      ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/columnlist.png)  
      ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/detail.png)  
-     H5:
+     H5:<br>
+     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/h5/index.png)  
+     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/h5/columnlist.png)  
+     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/h5/detail.png)  
        
   后台项目概览：<br>
      天梯登陆页面：
