@@ -11,5 +11,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>tianti-module-admin</module>
+    <module>tianti-module-interface</module>
   </modules>
 </project>

@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.jeff.tianti.modules</groupId>
+    <artifactId>tianti-modules</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.jeff.tianti.inter</groupId>
+  <artifactId>tianti-module-interface</artifactId>
+  <version>${tianti.version}</version>
+  <packaging>war</packaging>
+  <name>tianti-module-interface</name>
+  <description>tianti-module-interface</description>
+  
+  <dependencies>
+        <dependency>
+			<groupId>com.jeff.tianti.common</groupId>
+			<artifactId>tianti-common</artifactId>
+			<version>${tianti.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.jeff.tianti.cms</groupId>
+			<artifactId>tianti-cms</artifactId>
+			<version>${tianti.version}</version>
+		</dependency>
+  </dependencies>
+  <build>
+    <finalName>tianti-module-interface</finalName>
+  </build>
+</project>
