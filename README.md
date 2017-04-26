@@ -33,7 +33,7 @@
       3.3、后台中所用到的图标是从font文件夹里面选择copy进去的，font文件夹在聊天群里面拥有。
       3.4、编辑器的配置修改editor_config.js的var context_ = "http://127.0.0.1:8080/tianti-module-admin";
       3.5、前端项目（tianti-module-gateway）是一个静态项目，可以直接部署到web容器，支持多端自适应，需要跑接口系统。
-      3.6、采用前后端分离机制获取数 据，在/src/main/webapp/static/js/config.js文件里分别配置接口地址和后台项目地址;
+      3.6、采用前后端分离机制获取数据，在/src/main/webapp/static/js/config.js文件里分别配置接口地址和后台项目地址;
   
   前端项目概览：<br>
      PC：<br>
