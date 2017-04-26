@@ -10,7 +10,7 @@
     
   互动：<br>
   
-    1、如果您在使用过程中遇到问题，可以通过以下方式进行互动：邮箱：xuzhexu@139.com或qq交流群：422039518
+    1、如果您在使用过程中遇到问题，可以通过以下方式进行互动：邮箱：xuzhexu@139.com或qq交流群：422039518。如果有商务合作，可加作者微信：zhexuzhe，注明来源。
     2、天梯的版权属于开源作者，未经作者同意任何人不得用于商业用途。
     3、如果您觉得作者的开源天梯系统能帮助到您，您可以打赏作者一瓶汽水，并且留言。您的鼓励是我们前行的动力。微信昵称：许哲。
    ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  
@@ -42,7 +42,7 @@
      ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/h5/index.png)  
      ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/h5/columnlist.png)  
      ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/h5/detail.png)  
-       
+ <br>
   后台项目概览：<br>
      天梯登陆页面：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)  
