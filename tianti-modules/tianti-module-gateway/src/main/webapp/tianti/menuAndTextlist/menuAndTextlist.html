@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../../static/favicon/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>天梯-资讯页面</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="../../static/js/common.js"></script>
+    <script src="../../static/js/config.js"></script>
+
+    <script type="text/javascript">
+        window.rootColumnId = jc.param.get("rootColumnId") || 1;
+        window.columnListId = jc.param.get("columnListId");
+    </script>
+
+    <script type="text/javascript">
+        jc.uiReady = function () {
+
+            var app = document.getElementById("app");
+
+            window.resource("cmsApiColumnList", {
+                rootColumnId: rootColumnId
+            }, function (data) {
+
+                if (!data.length) return false;
+
+
+                if (jc.hasUI("menuList")) {
+                    jc.ui.menuList.trigger("setup", data);
+                }
+
+                if (!window.columnListId) {
+                    window.columnListId = data[0].id;
+                }
+
+                var columnListIdObject = null;
+                for (var i = 0, l = data.length; i < l; i++) {
+                    var curData = data[i];
+                    if (curData.id == window.columnListId) {
+                        columnListIdObject = curData;
+                    }
+                }
+
+                if (!columnListIdObject) return false;
+
+                if (jc.hasUI("titleStyle2")) {
+                    jc.ui.titleStyle2.trigger("setup", {
+                        data_title_text: columnListIdObject.name
+                    });
+                }
+
+                var columnId = columnListIdObject.id;
+
+                var titleStyle1 = jc.createDOM({
+                    dataUi: "titleStyle2",
+                    classname: "J_titleStyle2",
+                    dataId: columnId,
+                    dataPath: "cmsApiArticleList",
+                    dataTitleText: columnListIdObject.name,
+                    dataMoreText: "返回>>",
+                    dataMoreHref: "javascript: window.router('index',{ rootColumnId : '" + window.rootColumnId + "'} , true);"
+                });
+
+                var textList = jc.createDOM({
+                    dataUi: "textList",
+                    classname: "J_textList hasBorder",
+                    dataId: columnId,
+                    dataPath: "cmsApiArticleList",
+                    dataPageSize: 20
+                });
+
+
+                app.appendChild(titleStyle1);
+                app.appendChild(textList);
+
+                jc.uiUpdate();
+
+
+            }, false);
+
+        }
+
+    </script>
+
+
+</head>
+<body class="index">
+
+    <!-- 页头 -->
+    <div data-ui="header" class="J_header"></div>
+
+    <!-- 显示图 -->
+    <div data-ui="pageBanner" class="J_pageBanner"></div>
+
+    <!-- 页面主体容器 -->
+    <div class="container mt30" style="min-height:600px;">
+
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <!-- 菜单 -->
+                <div data-ui="menuList" class="J_menuList mb20"></div>
+
+            </div>
+
+            <div id="app" class="col-md-9">
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- 美腿 -->
+    <div data-ui="footer" class="J_footer mt40"></div>
+
+    <!-- alert -->
+    <div data-ui="alert" class="J_alert modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"></div>
+
+    <!-- confirm -->
+    <div data-ui="confirm" class="J_confirm modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"></div>
+
+
+</body>
+</html>

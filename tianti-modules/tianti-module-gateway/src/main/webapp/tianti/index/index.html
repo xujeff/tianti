@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="../../static/favicon/favicon.ico">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>天梯-CMS首页</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <script src="../../static/js/common.js"></script>
+    <script src="../../static/js/config.js"></script>
+
+    <script type="text/javascript">
+        window.rootColumnId = jc.param.get("rootColumnId");
+
+        if (!window.rootColumnId) {
+            window.resource("cmsApiColumnList", {
+                level: 0
+            }, function (data) {
+
+                /* orderNo 排序 */
+                if (!data) return false;
+
+                data = window.arraySortASC(data, "orderNo");
+                window.rootColumnId = data[0].id
+                //window.router("index", { rootColumnId: data[0].id }, true);
+
+            }, false);
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        window.indexLayoutRule = [
+            {
+                titleClass: "",
+                titleMore: false,
+                col: "col-md-4",
+                ui: "banner",
+                uiClassName: "",
+                pageSize: 5
+            },
+            {
+                titleClass: "vh",
+                titleMore: true,
+                col: "col-md-4",
+                ui: "textList",
+                uiClassName: "",
+                pageSize: 6
+
+            }, {
+                titleClass: "",
+                titleMore: true,
+                col: "col-md-4",
+                ui: "textList",
+                uiClassName: "showImg",
+                pageSize: 3
+            }
+
+
+        ];
+    </script>
+
+
+    <script type="text/javascript">
+        jc.uiReady = function () {
+
+            window.resource("cmsApiColumnList", {
+                rootColumnId: window.rootColumnId
+            }, function (data) {
+
+                data = window.arraySortASC(data, "orderNo");
+
+                window.uiIndexSetup(data);
+
+
+            }, false);
+
+        };
+
+
+    </script>
+
+
+    <script type="text/javascript">
+        window.uiIndexSetup = function (data) {
+
+            var app = document.getElementById("app");
+
+            for (var i = 0, l = data.length; i < l; i++) {
+
+
+                var curData = data[i];
+                var curDataId = curData.id;
+                var curDataName = curData.name;
+                var curDateCode = curData.code;
+
+                if (curDateCode == "sy_ad") {
+                    if (jc.hasUI("banner")) {
+                        jc.ui.banner.filter("type=index", "setAttr", { "data-id": curDataId, "data-path": "cmsApiArticleList" });
+                        jc.ui.banner.filter("type=index", "update");
+                    }
+                    continue;
+                }
+
+                var rule = window.indexLayoutRule.shift() || { titleClass: "", titleMore: true, col: "col-md-6", ui: "textList", uiClassName: "", pageSize: 6 };
+
+                var colMd = jc.createDOM({
+                    classname: rule.col
+                });
+
+                var titleStyle1 = jc.createDOM({
+                    dataUi: "titleStyle1",
+                    classname: "J_titleStyle1 " + rule.titleClass,
+                    dataId: curDataId,
+                    dataPath: "cmsApiArticleList",
+                    dataTitleText: curDataName,
+                    dataMoreText: rule.titleMore ? "更多>>" : "",
+                    dataMoreHref: "javascript: window.router('menuAndTextlist',{ rootColumnId : '" + window.rootColumnId + "' , columnListId : '" + curDataId + "' });"
+                });
+                colMd.appendChild(titleStyle1);
+
+
+                if (rule.ui == "banner") {
+                    var textList = jc.createDOM({
+                        dataUi: "banner",
+                        classname: "J_banner",
+                        dataId: curDataId,
+                        dataPath: "cmsApiArticleList",
+                        dataPageSize: 10
+                    });
+                    colMd.appendChild(textList);
+                }
+
+                if (rule.ui == "textList") {
+                    var textList = jc.createDOM({
+                        dataUi: "textList",
+                        classname: "J_textList notPage " + rule.uiClassName,
+                        dataId: curDataId,
+                        dataPath: "cmsApiArticleList",
+                        dataPageSize: rule.pageSize
+                    });
+                    colMd.appendChild(textList);
+                }
+
+
+                app.appendChild(colMd);
+
+            }
+
+            jc.uiUpdate();
+
+        }
+    </script>
+
+
+</head>
+<body class="index">
+
+    <!-- 页头 -->
+    <div id="header" data-ui="header" class="J_header"></div>
+
+    <!-- 轮播图 -->
+    <div data-ui="banner" data-type="index" class="J_banner"></div>
+
+    <!-- 页面主体容器 -->
+    <div class="container">
+
+        <div id="app" class="row">
+
+        </div>
+
+    </div>
+
+    <!-- footer -->
+    <div data-ui="footer" class="J_footer mt40"></div>
+
+    <!-- alert -->
+    <div data-ui="alert" class="J_alert modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"></div>
+
+    <!-- confirm -->
+    <div data-ui="confirm" class="J_confirm modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel"></div>
+
+
+</body>
+</html>

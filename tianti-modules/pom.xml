@@ -12,5 +12,6 @@
   <modules>
     <module>tianti-module-admin</module>
     <module>tianti-module-interface</module>
+    <module>tianti-module-gateway</module>
   </modules>
 </project>
