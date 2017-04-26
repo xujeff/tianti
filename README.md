@@ -2,8 +2,8 @@
 
   简介：<br>
   
-    1、天梯是一款使用Java编写的轻量级CMS系统，目前可以实现换肤、用户管理、角色管理、资源目录管理、角色授权、栏目管理、信息管理。
-    2、同时也是一款服务端后台模板，使用layer和自身样式实现了固定模块的增删查改功能。
+    1、天梯是一款使用Java编写的免费的轻量级CMS系统，目前提供了从后台管理到前端展现的整体解决方案。
+    2、前端页面自适应，支持PC和H5端，采用前后端分离的机制实现。
     3、项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展。
     4、同时提供了针对dao、service等的代码生成工具。
     5、同时用户可以选择后台样式，目前拥有天梯蓝和天梯红两种皮肤。皮肤偏清新风格。
@@ -22,15 +22,25 @@
        2.1、tianti-common：系统基础服务抽象，包括entity、dao和service的基础抽象；
        2.2、tianti-org：用户权限模块服务实现；
        2.3、tianti-cms:资讯类模块服务实现；
-       2.4、tianti-module-admin：后台web项目实现；
+       2.4、tianti-module-admin：天梯后台web项目实现；
+       2.5、tianti-module-interface：天梯接口项目实现；
+       2.6、tianti-module-gateway：天梯前端自适应项目实现（是一个静态项目，调用tianti-module-interface获取数据）；
      3、使用说明：
       3.0、本项目JDK默认显示的是1.7，用户可以自行选择1.7+。
       3.1、数据库使用mysql，初始化脚本位于tianti-module-admin中的src/main/webapp/scripts/tianti_stage.sql。
       3.2、后台的登陆路径为http://ip:端口/login,用户名为admin，初始密码为123456。
       3.3、后台中所用到的图标是从font文件夹里面选择copy进去的，font文件夹在聊天群里面拥有。
       3.4、编辑器的配置修改editor_config.js的var context_ = "http://127.0.0.1:8080/tianti-module-admin";
+      3.5、前端项目（tianti-module-gateway）是一个静态项目，可以直接部署到web容器，支持多端自适应，采用前后端分离机制获取数    据，在/src/main/webapp/static/js/config.js文件里分别配置接口地址和后台项目地址;
   
-   项目概览：<br>
+  前端项目概览：<br>
+     PC：
+     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/index.png)  
+     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/columnlist.png)  
+     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/detail.png)  
+     H5:
+       
+  后台项目概览：<br>
      天梯登陆页面：
     ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/login.png)  
      天梯蓝风格（默认）：
