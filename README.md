@@ -14,7 +14,7 @@
     1、如果有商务合作，可加作者微信：zhexuzhe，注明来源。
     2、天梯的版权属于开源作者，未经作者同意任何人不得用于商业用途。
     3、如果您觉得作者的开源天梯系统能帮助到您，您可以打赏作者一瓶汽水，并且留言。您的鼓励是我们前行的动力。微信昵称：许哲。
-   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)  
+   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  
     
   技术架构：<br>
   
@@ -37,7 +37,7 @@
       3.7、前台项目可以直接部署到Nginx访问，也可以跑tianti-module-gateway应用。
       3.8、如果是tomcat跑前端应用，访问路径为http://ip:端口/tianti-module-gateway/tianti/index/index.html。
       
-   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/index.png)  
+   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)   
   
   前端项目概览：<br>
      PC：<br>
