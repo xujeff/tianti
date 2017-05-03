@@ -6,18 +6,10 @@
     2、用户可以不编写一句代码，就制作出一个默认风格的CMS站点。
     3、前端页面自适应，支持PC和H5端，采用前后端分离的机制实现。
     4、项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展。
-    5、用户可以选择后台样式，目前拥有天梯蓝和天梯红两种皮肤。皮肤偏清新风格。
-    6、目前提供的前端页面风格是天梯默认版本的，如果有定制化的业务需求可以加我微信(zhexuzhe)细聊。
+    5、如果您在使用过程中遇到问题，可以通过以下方式进行互动：qq交流群：422039518（3元费用加群，为了避免广告用户）。
+    6、如果您在使用过程中遇到问题，可以通过以下方式进行互动：qq交流群：422039518（3元费用加群，为了避免广告用户）。
     
-  互动：<br>
-  
-    1、如果您在使用过程中遇到问题，可以通过以下方式进行互动：邮箱：xuzhexu@139.com或qq交流群：422039518。
-    2、如果有商务合作，可加作者微信：zhexuzhe，注明来源。
-    3、天梯的版权属于开源作者，如果有需要对天梯进行二次开发的培训服务可以加我微信(zhexuzhe)详聊。
-    4、如果您觉得作者的开源天梯系统能帮助到您，您可以打赏作者一瓶汽水，并且留言。您的鼓励是我们前行的动力。微信昵称：许哲。
-    5、捐赠时请加我（zhexuzhe）为好友（提供捐赠名称及金额），优先提供技术支持，谢谢！( ^_^ )
-   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  
-    
+    
   技术架构：<br>
   
      1、技术选型：Spring Data JPA、Hibernate、Shiro、 Spring MVC、Layer、Mysql等。
@@ -39,7 +31,7 @@
       3.7、前台项目可以直接部署到Nginx访问，也可以跑tianti-module-gateway应用。
       3.8、如果是tomcat跑前端应用，访问路径为http://ip:端口/tianti-module-gateway/tianti/index/index.html。
       
-   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)   
+  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)   
   
   前端项目概览：<br>
      PC：<br>
