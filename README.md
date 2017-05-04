@@ -9,7 +9,7 @@
     5、如果您在使用过程中遇到问题，可以通过以下方式进行互动：天梯官方交流群：422039518，欢迎加入，获取更多咨询服务。
     6、针对入群的用户，我们将优先为您提供一对一的咨询解答服务，也可以加我微信详聊，注明天梯用户、留下联系方式。
     7、天梯的版权属于开源作者，如果有需要对天梯进行二次开发的培训服务可以加我微信详聊，注明天梯用户、留下联系方式。
-  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  
+  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  <br>
    
   
   技术架构：<br>
