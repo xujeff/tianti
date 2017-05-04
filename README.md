@@ -10,7 +10,8 @@
     6、针对入群的用户，我们将优先为您提供一对一的咨询解答服务，也可以加我微信详聊，注明天梯用户、留下联系方式。
     7、天梯的版权属于开源作者，如果有需要对天梯进行二次开发的培训服务可以加我微信详聊，注明天梯用户、留下联系方式。
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  
-    
+   
+  
   技术架构：<br>
   
      1、技术选型：Spring Data JPA、Hibernate、Shiro、 Spring MVC、Layer、Mysql等。
