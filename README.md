@@ -11,8 +11,8 @@
        5.2、也可以微信扫描下面二维码，留言注明：天梯+个人qq号。我会第一时间拉入群。
     6、针对入群的用户，我们将优先为您提供一对一的咨询解答服务，也可以加我微信（zhexuzhe）详聊，注明天梯用户、留下联系方式。
     7、天梯的版权属于开源作者，如果有需要对天梯进行二次开发的培训服务可以加我微信（zhexuzhe）详聊，注明天梯用户、留下联系方式。
+  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)  <br>
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_dashang_erweima.png)  <br>
-   
   
   技术架构：<br>
   
@@ -34,8 +34,7 @@
       3.6、采用前后端分离机制获取数据，在/src/main/webapp/static/js/config.js文件里分别配置接口地址和后台项目地址;
       3.7、前台项目可以直接部署到Nginx访问，也可以跑tianti-module-gateway应用。
       3.8、如果是tomcat跑前端应用，访问路径为http://ip:端口/tianti-module-gateway/tianti/index/index.html。
-      
-  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)   
+        
   
   前端项目概览：<br>
      PC：<br>
