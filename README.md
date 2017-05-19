@@ -8,8 +8,8 @@
     4、项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展，很方便二次开发。
     5、如果您在使用过程中遇到问题，可以通过以下方式进行互动：
        5.1、天梯官方交流群：422039518，欢迎加入，内有更多说明文档和学习资料。      
-       5.2、也可以微信扫描下面二维码加入公众号。
-    6、针对入群的用户，我们将优先为您提供一对一的咨询解答服务，也可以加我微信（zhexuzhe）详聊，注明天梯用户、留下联系方式。
+       5.2、也可以微信扫描下面二维码加入公众号。
+    6、针对入群的用户，我们将优先为您提供一对一的咨询解答服务，也可以加我微信（zhexuzhe）详聊，注明天梯用户、留下联系方式。  
     7、天梯的版权属于开源作者，如果有需要对天梯进行二次开发的培训服务可以加我微信（zhexuzhe）详聊，注明天梯用户、留下联系方式。
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)  <br>
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_gongzhonghao.png)  <br>
