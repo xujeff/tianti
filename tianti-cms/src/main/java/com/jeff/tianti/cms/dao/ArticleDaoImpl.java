@@ -43,6 +43,10 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         		 hql.append(" and t.publisher like  :publisher ");
         		 map.put("publisher", "%"+articleQueryDTO.getPublisher()+"%");
         	 }
+		 if(StringUtils.isNotBlank(articleQueryDTO.getDeleteFlag())){
+        		 hql.append(" and t.deleteFlag = :deleteFlag ");
+            	         map.put("deleteFlag", articleQueryDTO.getDeleteFlag());
+        	 }
         	 if(StringUtils.isNotBlank(articleQueryDTO.getStartDate())){
         		 hql.append(" and t.createDate  >= :startDate ");
         		 try {
@@ -92,6 +96,10 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         	 if(StringUtils.isNotBlank(articleQueryDTO.getPublisher())){
         		 hql.append(" and t.publisher like = :publisher ");
         		 map.put("publisher", "%"+articleQueryDTO.getPublisher()+"%");
+        	 }
+		 if(StringUtils.isNotBlank(articleQueryDTO.getDeleteFlag())){
+        		 hql.append(" and t.deleteFlag = :deleteFlag ");
+            	         map.put("deleteFlag", articleQueryDTO.getDeleteFlag());
         	 }
         	 if(StringUtils.isNotBlank(articleQueryDTO.getStartDate())){
         		 hql.append(" and t.createDate  >= :startDate ");
