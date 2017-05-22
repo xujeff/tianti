@@ -81,6 +81,7 @@
 		    <form action="${ctx }/cms/article/list" id="queryForm" method="POST">
 		        <input type="hidden" name="type" value="${type }" />
 		        <input type="hidden" name="columnId" value="${articleQueryDTO.columnId }" />
+			<input type="hidden" name="rootColumnId" value="${articleQueryDTO.rootColumnId }" />
 		        <div class="J_toolsBar clearfix">
 					<div class="t_text ml10">
 	                	<input placeholder="标题" type="text" style="width:200px" id="title" name="title" value="${articleQueryDTO.title }">
