@@ -123,6 +123,7 @@ public class CmsController {
 		articleQueryDTO.setPageSize(pageSize);
 		articleQueryDTO.setTop(top);
 		articleQueryDTO.setType(type);
+		articleQueryDTO.setDeleteFlag(Article.DELETE_FLAG_NORMAL);
 		if(StringUtils.isNotBlank(isPage)){
 			if(isPage.equals("1")){
 				page = this.articleService.queryArticlePage(articleQueryDTO);
