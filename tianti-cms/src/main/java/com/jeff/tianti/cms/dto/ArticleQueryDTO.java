@@ -33,7 +33,7 @@ public class ArticleQueryDTO extends CommonQueryDTO{
 	//前N条数据
 	private Integer top;
 	
-	//逻辑删除
+	// 逻辑删除
 	private String deleteFlag;
 	
 	//按发布日期排序样式：up为升序，down为降序
