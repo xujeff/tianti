@@ -33,6 +33,9 @@ public class ArticleQueryDTO extends CommonQueryDTO{
 	//前N条数据
 	private Integer top;
 	
+	//逻辑删除
+	private String deleteFlag;
+	
 	//按发布日期排序样式：up为升序，down为降序
 	private String createDateSortCss;
 
@@ -90,6 +93,14 @@ public class ArticleQueryDTO extends CommonQueryDTO{
 
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
+	}
+
+	public String getDeleteFlag() {
+		return deleteFlag;
+	}
+
+	public void setDeleteFlag(String deleteFlag) {
+		this.deleteFlag = deleteFlag;
 	}
 
 	public String getCreateDateSortCss() {
