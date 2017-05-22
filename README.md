@@ -6,8 +6,8 @@
     2、用户可以不编写一句代码，就制作出一个默认风格的CMS站点。
     3、前端页面自适应，支持PC和H5端，采用前后端分离的机制实现。后端支持天梯蓝和天梯红换肤功能。
     4、项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展，很方便二次开发。
-    5、如果您在使用过程中遇到问题，可以通过以下方式进行互动：
-       天梯官方交流群：422039518，也可以微信扫描下面二维码加入公众号（javaTianti），内有更多说明文档和学习资料，每天为你推送优质内容。 
+    5、如果您在使用过程中遇到问题，可以通过以下方式获取更多的文档和资料。
+       天梯官方交流群：422039518，也可以扫描下面二维码加入公众号（javaTianti）。<br>
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_gongzhonghao.png)  <br>
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)  <br>
   
