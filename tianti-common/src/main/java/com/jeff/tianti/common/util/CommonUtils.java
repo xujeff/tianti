@@ -41,7 +41,7 @@ public class CommonUtils {
 	
 	public static Date obj2Date(Object obj){
 		Date date = null;
-		if(obj == null && obj instanceof Timestamp){
+		if(obj != null && obj instanceof Timestamp){
 			Timestamp timestamp = (Timestamp) obj;
 			date = new Date(timestamp.getTime());
 		}
