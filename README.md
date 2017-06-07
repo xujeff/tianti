@@ -8,7 +8,7 @@
     4、项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展，很方便二次开发。
     5、 如果您在使用过程中遇到问题，可以通过以下方式获取更多的文档和资料。<br>
       5.1、天梯官方交流群：422039518，也可以扫描下面二维码加入公众号（javaTianti）。<br>
-      5.2、VIP服务：https://zb.oschina.net/service/2eaaa401776fd84a
+      5.2、VIP服务：https://zb.oschina.net/service/2eaaa401776fd84a
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tianti_gongzhonghao.png)  <br>
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)  <br>
   
