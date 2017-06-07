@@ -14,7 +14,34 @@
   
   技术架构：<br>
   
-     1、技术选型：Spring Data JPA、Hibernate、Shiro、 Spring MVC、Layer、Mysql等。
+     1、技术选型：
+        后端
+         ·核心框架：Spring Framework 4.2.5.RELEASE
+         ·安全框架：Apache Shiro 1.3.2
+         ·视图框架：Spring MVC 4.2.5.RELEASE
+         ·数据库连接池：Tomcat JDBC
+         ·缓存框架：Ehcache 
+         ·ORM框架：Spring Data JPA、hibernate 4.3.5.Final
+         ·日志管理：SLF4J 1.7.21、Log4j
+         ·编辑器：ueditor
+         ·工具类：Apache Commons、Jackson 2.8.5、POI 3.15
+         ·view层：JSP
+         ·数据库：mysql、oracle等关系型数据库
+
+        前端
+         ·dom : Jquery
+         ·分页 : jquery.pagination
+         ·UI管理 : common
+         ·UI集成 : uiExtend
+         ·滚动条 : jquery.nicescroll.min.js
+         ·图表 ： highcharts
+         ·3D图表 ：highcharts-more
+         ·轮播图 ： jquery-swipe
+         ·表单提交 ：jquery.form
+         ·文件上传 ：jquery.uploadify
+         ·表单验证 ：jquery.validator
+         ·展现树 ：jquery.ztree
+         ·html模版引擎 ：template
      2、项目结构：
        2.1、tianti-common：系统基础服务抽象，包括entity、dao和service的基础抽象；
        2.2、tianti-org：用户权限模块服务实现；
