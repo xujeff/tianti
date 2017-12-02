@@ -279,7 +279,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 						uploadSize         : 0, // The size in bytes of the upload queue
 						queueBytesUploaded : 0, // The size in bytes that have been uploaded for the current upload queue
 						uploadQueue        : [], // The files currently to be uploaded
-						errorMsg           : ''
+						errorMsg           : 'Some files were not added to the queue:'
 					};
 
 					// Save references to all the objects
@@ -324,7 +324,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 							} else {
 								swfuploadify.cancelUpload($(this).attr('id'));
 							}
-							$(this).find('.data').removeClass('data').html(' - 已取消');
+							$(this).find('.data').removeClass('data').html(' - Cancelled');
 							$(this).find('.uploadify-progress-bar').remove();
 							$(this).delay(1000 + 100 * delay).fadeOut(500, function() {
 								$(this).remove();
@@ -337,7 +337,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 					} else {
 						for (var n = 0; n < args.length; n++) {
 							swfuploadify.cancelUpload(args[n]);
-							$('#' + args[n]).find('.data').removeClass('data').html(' - 已取消');
+							$('#' + args[n]).find('.data').removeClass('data').html(' - Cancelled');
 							$('#' + args[n]).find('.uploadify-progress-bar').remove();
 							$('#' + args[n]).delay(1000 + 100 * n).fadeOut(500, function() {
 								$(this).remove();
@@ -348,7 +348,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 					var item = $('#' + settings.queueID).find('.uploadify-queue-item').get(0);
 					$item = $(item);
 					swfuploadify.cancelUpload($item.attr('id'));
-					$item.find('.data').removeClass('data').html(' - 已取消');
+					$item.find('.data').removeClass('data').html(' - Cancelled');
 					$item.find('.uploadify-progress-bar').remove();
 					$item.delay(1000).fadeOut(500, function() {
 						$(this).remove();
@@ -569,7 +569,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 			var settings = this.settings;
 
 			// Reset some queue info
-			this.queueData.errorMsg       = '';
+			this.queueData.errorMsg       = 'Some files were not added to the queue:';
 			this.queueData.filesReplaced  = 0;
 			this.queueData.filesCancelled = 0;
 
@@ -591,11 +591,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 			// Run the default event handler
 			if ($.inArray('onDialogClose', settings.overrideEvents) < 0) {
 				if (this.queueData.filesErrored > 0) {
-					if(this.queueData.errorMsg){
-						alert(this.queueData.errorMsg);
-					}else{
-						alert('请选择合适的文件');
-					}
+					alert(this.queueData.errorMsg);
 				}
 			}
 
@@ -616,7 +612,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 			for (var n in this.queueData.files) {
 				queuedFile = this.queueData.files[n];
 				if (queuedFile.uploaded != true && queuedFile.name == file.name) {
-					var replaceQueueItem = confirm('文件 "' + file.name + '" 已经存在于上传队列.\n是否要替换队列中的现有文件?');
+					var replaceQueueItem = confirm('The file named "' + file.name + '" is already in the queue.\nDo you want to replace the existing item in the queue?');
 					if (!replaceQueueItem) {
 						this.cancelUpload(file.id);
 						this.queueData.filesCancelled++;
@@ -706,7 +702,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 						}
 						break;
 					case SWFUpload.QUEUE_ERROR.FILE_EXCEEDS_SIZE_LIMIT:
-						this.queueData.errorMsg += '\n文件 "' + file.name + '" 超过最大限制(' + settings.fileSizeLimit + ').';
+						this.queueData.errorMsg += '\nThe file "' + file.name + '" exceeds the size limit (' + settings.fileSizeLimit + ').';
 						break;
 					case SWFUpload.QUEUE_ERROR.ZERO_BYTE_FILE:
 						this.queueData.errorMsg += '\nThe file "' + file.name + '" is empty.';
@@ -966,7 +962,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 
 			// Call the default event handler
 			if ($.inArray('onUploadSuccess', settings.overrideEvents) < 0) {
-				$('#' + file.id).find('.data').html(' - 上传成功');
+				$('#' + file.id).find('.data').html(' - Complete');
 			}
 
 			// Call the user-defined event handler
