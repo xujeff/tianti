@@ -218,6 +218,17 @@ public class CmsController {
 					ColumnInfo columnInfo = this.columnInfoService.find(id);
 					columnInfo.setDeleteFlag(deleteFlag);
 					this.columnInfoService.update(columnInfo);
+					
+					//删除该节点对应的孩子列表
+					ColumnInfoQueryDTO columnInfoQueryDTO = new ColumnInfoQueryDTO();
+					columnInfoQueryDTO.setRootColumnId(id);
+					List<ColumnInfo> leafColumnInfoList = this.columnInfoService.queryColumnInfoList(columnInfoQueryDTO);
+					if(leafColumnInfoList != null && leafColumnInfoList.size() > 0){
+						for(ColumnInfo c : leafColumnInfoList){
+							c.setDeleteFlag(ColumnInfo.DELETE_FLAG_DELETED);
+							this.columnInfoService.update(c);
+						}
+					}
 				}
 			}
 			ajaxResult.setSuccess(true);
@@ -554,6 +565,18 @@ public class CmsController {
 			e.printStackTrace();
 		}
 		return ajaxResult;
+	}
+	
+	/**
+	 * 跳转到flash控件开启页面
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/article/flashView")
+	public String articleFlashView(HttpServletRequest request, Model model){
+		
+		return "/cms/article_flash_view";
 	}
 
 }
