@@ -4,7 +4,7 @@
 <%@ include file="../common/common.jsp" %>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>添加文章 - ${title }</title>
+<title>添加/编辑文章 - ${title }</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/js/uploadify/uploadify.css"> 
 </head>
 <body>
@@ -126,7 +126,7 @@
 			</tr>
 			
 			<tr>
-				<td class="l_title w200">图片：</td>
+				<td class="l_title w200">图片：<a href="${ctx }/cms/article/flashView" target="_blank"><font color="red">无法上传？</font></a></td>
 				<td>
 					<div class="J_toolsBar fl">
 					    <div class=" w200 ml10">
@@ -233,9 +233,13 @@
        function mySubmit(){
    		   $('#editForm').submit();
    	   }
+
        
        function selectLeafColumn(){
     	   var articleId = '${article.id}';
+    	   var columnId = '${columnId}'
+
+
     	   var rootColumnInfoId = $("#rootColumnId").val();
     	   $.ajax({
 				url : '${ctx}/cms/column/ajax/getLeafColumn',
@@ -246,24 +250,23 @@
 				traditional : true,
 				success : function(obj){
 					var resultMsg = '<option value="">请选择</option>';
-					$("#leafColumnId").empty();
-					if(obj != null && obj.data != null ){
-						var leafColumnId = '${columnId}';
-						for(var i=0;i<obj.data.length;i++){
-							var selectedStr = "";
-							if(leafColumnId == obj.data[i].id){
-								selectedStr = 'selected="selected"';
-							}
-							resultMsg += '<option value="'+obj.data[i].id+'" '+selectedStr+'>'+obj.data[i].name+'</option>';
-						}
-					}
+					$("#leafColumnId").html("");
+
 					$("#leafColumnId").append(resultMsg);
-					if(articleId == null || articleId == ''){
-						$("#rootColumnId").prev("span").html($("#rootColumnId").find("option:selected").html());
-						$("#leafColumnId").prev("span").html($("#leafColumnId").find("option:selected").html());
-					}else{
-						$("select").change();
+					var data = obj.data;
+					var dataLength = data.length;
+					//加载数据
+					for(var i = 0;i<dataLength;i++){
+					    var option = $("<option></option>");
+					    option.text(data[i].name);
+					    option.val(data[i].id);
+					    if(data[i].id == columnId){
+					        option.attr("selected",true);
+						}
+                        $("#leafColumnId").append(option);
 					}
+                    $("#leafColumnId").trigger("change")
+
 				}
 			});
        }
@@ -274,8 +277,8 @@
 	   });
 	   
 	   $(function(){
-			selectLeafColumn();
-			$("select").change();
+
+			$("#rootColumnId").trigger("change")
 			var articleType = '${article.type}';
 			if(articleType == 1){
 				$('#contentTr').hide();

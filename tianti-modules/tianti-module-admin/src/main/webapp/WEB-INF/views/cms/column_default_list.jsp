@@ -57,7 +57,7 @@
                             <div class="m_btn">
                                 <a href="javascript:myEdit('','level0');"><i class="icon"></i><span>添加</span></a>
                                 <a href="javascript:myEdit('${columnInfoQueryDTO.rootColumnId }','level0');"><i class="icon"></i><span>修改</span></a>
-                                <a href="javascript:delColumn();"><i class="icon"></i><span>删除</span></a>
+                                <a href="javascript:delColumn('${columnInfoQueryDTO.rootColumnId }');"><i class="icon"></i><span>删除</span></a>
                             </div>
                     </div>
                </div>
@@ -204,6 +204,7 @@
     </div>
 <script src="${ctx }/static/plugins/chosen_v1.6.2/chosen.jquery.js"></script>
 <script type="text/javascript">
+    //添加/修改栏目
 	function myEdit(id,columnLevel){
 		var rootColumnId = '${columnInfoQueryDTO.rootColumnId}';
 		var loadIdx = layer.load();
@@ -214,9 +215,7 @@
 			title = '修改栏目';
 		}
 		$.post('${ctx}/cms/column/edit?id='+id+'&columnLevel='+columnLevel+'&rootColumnId='+rootColumnId, {}, function(str){
-			
 			layer.close(loadIdx);
-			
 			layer.open({
 				title : title,
 				type : 1,
@@ -233,16 +232,49 @@
 		});
 	}
 	
+    //删除栏目
+	function delColumn(rootColumnId){
+    	if(rootColumnId == ""){
+    		layer.alert('请选择需要删除的栏目');
+    	}else{
+    		var content = '确定要删除该栏目吗？';
+    		layer.confirm(content, function(index){
+    			layer.close(index);
+    			var loadIdx = layer.load();
+    			$.ajax({
+    				url : '${ctx}/cms/column/ajax/delete',
+    				type : 'post',
+    				data : {
+    					'ids' : rootColumnId,
+    					'deleteFlag' : '1'
+    				},
+    				traditional : true,
+    				success : function(result){
+    					layer.close(loadIdx);
+    					if(result.success){
+    						layer.alert('操作成功', function(){
+    							window.location.href="${ctx}/cms/column/list";
+    						});
+    					}else{
+    						layer.alert('操作失败');
+    					}
+    				}
+    			});
+    		});
+    	}
+	}
 	
+    //编辑提交
 	function mySubmit(){
 		$('#editForm').submit();
 	}
 	
+	//查询
 	function myQuery(){
 		$('#queryForm').submit();
 	}
 	
-	
+	//删除/恢复数据
 	function updDeleteFlag(id, deletFlag){
 		var ids = new Array();
 		ids.push(id);
