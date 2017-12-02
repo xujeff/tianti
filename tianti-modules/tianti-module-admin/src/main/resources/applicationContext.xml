@@ -48,7 +48,7 @@
 		</property>
 		
 		<property name="generateDdl" value="true" />
-		<property name="showSql" value="false" />
+		<property name="showSql" value="true" />
 		<!--  
 		<property name="jpaPropertyMap">
 			<map>
