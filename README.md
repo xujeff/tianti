@@ -8,7 +8,8 @@
     4、项目技术分层明显，用户可以根据自己的业务模块进行相应地扩展，很方便二次开发。QQ交流群：419297326
    
   ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/tiantiframework.png)  <br>
-  
+  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/gateway/help/help.png)  <br>
+
   技术架构：<br>
   
      1、技术选型：
