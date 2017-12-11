@@ -94,8 +94,7 @@ public class CmsController {
 		String columnId = request.getParameter("columnId");
 		//是否分页:1为是，0为否，默认为分页
 		String isPage = request.getParameter("isPage");
-		//type为shenhe时获取审核通过的数据，type为zhiding时获取置顶的数据
-		String type = request.getParameter("type");
+		
 		//获取前N条的数据
 		String topStr = request.getParameter("top");
 		String currentPageStr = request.getParameter("currentPage");
@@ -122,8 +121,8 @@ public class CmsController {
 		articleQueryDTO.setCurrentPage(currentPage);
 		articleQueryDTO.setPageSize(pageSize);
 		articleQueryDTO.setTop(top);
-		articleQueryDTO.setType(type);
 		articleQueryDTO.setDeleteFlag(Article.DELETE_FLAG_NORMAL);
+		articleQueryDTO.setIsFront(true);
 		if(StringUtils.isNotBlank(isPage)){
 			if(isPage.equals("1")){
 				page = this.articleService.queryArticlePage(articleQueryDTO);
