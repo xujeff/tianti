@@ -43,7 +43,7 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         		 hql.append(" and t.publisher like  :publisher ");
         		 map.put("publisher", "%"+articleQueryDTO.getPublisher()+"%");
         	 }
-		 if(StringUtils.isNotBlank(articleQueryDTO.getDeleteFlag())){
+		     if(StringUtils.isNotBlank(articleQueryDTO.getDeleteFlag())){
         		 hql.append(" and t.deleteFlag = :deleteFlag ");
             	         map.put("deleteFlag", articleQueryDTO.getDeleteFlag());
         	 }
@@ -65,17 +65,18 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
 					e.printStackTrace();
 				}
         	 }
-        	 if(StringUtils.isNotBlank(articleQueryDTO.getType())){
-        		 if(articleQueryDTO.getType().equals("laji")){
-        			 hql.append(" and t.deleteFlag =1 ");
-        		 }else if(articleQueryDTO.getType().equals("shenhe")){
-        			 hql.append(" and t.isAudit =1 ");
-        		 }else if(articleQueryDTO.getType().equals("zhiding")){
-        			 hql.append(" and t.isTop =1 ");
-        		 }
-                 hql.append(" order by t.createDate desc ");
-        	 }else{//默认为查询审核通过的，且按照置顶和时间降序排序
+        	 if(articleQueryDTO.getIsFront() != null && articleQueryDTO.getIsFront()){
+        		 //前端默认查询审核通过的且未删除的记录，且按照置顶和时间降序排序
                  hql.append(" and t.isAudit =1  order by t.isTop desc,t.createDate desc ");
+        	 }else{
+        		 if(StringUtils.isNotBlank(articleQueryDTO.getType())){
+            		 if(articleQueryDTO.getType().equals("laji")){
+            			 hql.append(" and t.deleteFlag =1 ");
+            		 }else if(articleQueryDTO.getType().equals("zhiding")){
+            			 hql.append(" and t.isTop =1 ");
+            		 }
+                     hql.append(" order by t.createDate desc ");
+            	 }
         	 }
          }
          return this.queryForPageWithParams(hql.toString(),map,articleQueryDTO.getCurrentPage(),articleQueryDTO.getPageSize());
@@ -99,7 +100,7 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         		 hql.append(" and t.publisher like = :publisher ");
         		 map.put("publisher", "%"+articleQueryDTO.getPublisher()+"%");
         	 }
-		 if(StringUtils.isNotBlank(articleQueryDTO.getDeleteFlag())){
+		     if(StringUtils.isNotBlank(articleQueryDTO.getDeleteFlag())){
         		 hql.append(" and t.deleteFlag = :deleteFlag ");
             	         map.put("deleteFlag", articleQueryDTO.getDeleteFlag());
         	 }
@@ -111,17 +112,18 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         		 hql.append(" and t.createDate  <= :endDate ");
         		 map.put("endDate",articleQueryDTO.getEndDate());
         	 }
-        	 if(StringUtils.isNotBlank(articleQueryDTO.getType())){
-        		 if(articleQueryDTO.getType().equals("laji")){
-        			 hql.append(" and t.deleteFlag =1 ");
-        		 }else if(articleQueryDTO.getType().equals("shenhe")){
-        			 hql.append(" and t.isAudit =1 ");
-        		 }else if(articleQueryDTO.getType().equals("zhiding")){
-        			 hql.append(" and t.isTop =1 ");
-        		 }
-                 hql.append(" order by t.createDate desc ");
-        	 }else{//默认为查询审核通过的，且按照置顶和时间降序排序
+        	 if(articleQueryDTO.getIsFront() != null && articleQueryDTO.getIsFront()){
+        		 //前端默认查询审核通过的且未删除的记录，且按照置顶和时间降序排序
                  hql.append(" and t.isAudit =1  order by t.isTop desc,t.createDate desc ");
+        	 }else{
+        		 if(StringUtils.isNotBlank(articleQueryDTO.getType())){
+            		 if(articleQueryDTO.getType().equals("laji")){
+            			 hql.append(" and t.deleteFlag =1 ");
+            		 }else if(articleQueryDTO.getType().equals("zhiding")){
+            			 hql.append(" and t.isTop =1 ");
+            		 }
+                     hql.append(" order by t.createDate desc ");
+            	 }
         	 }
          }
          if(articleQueryDTO.getTop() != null){
