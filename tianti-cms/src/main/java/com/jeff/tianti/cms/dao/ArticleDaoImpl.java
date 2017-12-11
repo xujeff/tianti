@@ -73,9 +73,11 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         		 }else if(articleQueryDTO.getType().equals("zhiding")){
         			 hql.append(" and t.isTop =1 ");
         		 }
+                 hql.append(" order by t.createDate desc ");
+        	 }else{//默认为查询审核通过的，且按照置顶和时间降序排序
+                 hql.append(" and t.isAudit =1  order by t.isTop desc,t.createDate desc ");
         	 }
          }
-         hql.append(" order by t.createDate desc ");
          return this.queryForPageWithParams(hql.toString(),map,articleQueryDTO.getCurrentPage(),articleQueryDTO.getPageSize());
     }
 
@@ -117,9 +119,11 @@ public class ArticleDaoImpl extends CustomBaseSqlDaoImpl implements ArticleDaoCu
         		 }else if(articleQueryDTO.getType().equals("zhiding")){
         			 hql.append(" and t.isTop =1 ");
         		 }
+                 hql.append(" order by t.createDate desc ");
+        	 }else{//默认为查询审核通过的，且按照置顶和时间降序排序
+                 hql.append(" and t.isAudit =1  order by t.isTop desc,t.createDate desc ");
         	 }
          }
-         hql.append(" order by t.createDate desc ");
          if(articleQueryDTO.getTop() != null){
         	 PageModel pageModel = this.queryForPageWithParams(hql.toString(),map,0, articleQueryDTO.getTop());
         	 if(pageModel != null){
