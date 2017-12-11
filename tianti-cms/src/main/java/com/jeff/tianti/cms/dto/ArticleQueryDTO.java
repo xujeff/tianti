@@ -9,6 +9,9 @@ import com.jeff.tianti.common.dto.CommonQueryDTO;
  */
 public class ArticleQueryDTO extends CommonQueryDTO{
 	
+	//是否前端查询
+	private Boolean isFront;
+	
 	//数据获取类型（如全部、已审核等）
 	private String type;
 	
@@ -38,6 +41,14 @@ public class ArticleQueryDTO extends CommonQueryDTO{
 	
 	//按发布日期排序样式：up为升序，down为降序
 	private String createDateSortCss;
+
+	public Boolean getIsFront() {
+		return isFront;
+	}
+
+	public void setIsFront(Boolean isFront) {
+		this.isFront = isFront;
+	}
 
 	public String getType() {
 		return type;
