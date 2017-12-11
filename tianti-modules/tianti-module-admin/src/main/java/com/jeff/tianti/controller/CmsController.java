@@ -265,6 +265,7 @@ public class CmsController {
 		if(StringUtils.isNotBlank(pageSizeStr)){
 			pageSize = Integer.parseInt(pageSizeStr);
 		}
+		
 		ColumnInfoQueryDTO columnInfoQueryDTO =new ColumnInfoQueryDTO();
 		columnInfoQueryDTO.setLevel(ColumnInfo.LEVEL_ROOT);
 		List<ColumnInfo> rootCoulumnInfoList = this.columnInfoService.queryColumnInfoList(columnInfoQueryDTO);
@@ -301,6 +302,7 @@ public class CmsController {
 		ArticleQueryDTO articleQueryDTO = new ArticleQueryDTO();
 		articleQueryDTO.setColumnId(columnId);
 		articleQueryDTO.setType(type);
+		articleQueryDTO.setIsFront(false);
 		articleQueryDTO.setRootColumnId(rootColumnId);
 		articleQueryDTO.setTitle(title);
 		articleQueryDTO.setPublisher(publisher);
