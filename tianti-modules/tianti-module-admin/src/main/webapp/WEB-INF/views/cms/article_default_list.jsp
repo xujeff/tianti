@@ -47,7 +47,7 @@
                 <div class="n_item
                     <c:if test="${articleQueryDTO.type == 'shenhe' }">current</c:if>
                 ">
-                    <div class="i_default"><a href="${ctx }/cms/article/list?type=shenhe&rootColumnId=${articleQueryDTO.rootColumnId}"><span>审核列表（
+                    <div class="i_default"><a href="${ctx }/cms/article/list?rootColumnId=${articleQueryDTO.rootColumnId}"><span>审核列表（
                     <c:choose>
                       <c:when test="${statisMap.shenheCount != null }">
                          ${statisMap.shenheCount}
@@ -130,6 +130,7 @@
 	               		记录数：<font color="red" id="totalRecode">${page.totalCount}</font>
 	               	</div>
 				</div>
+				<div style="text-align: right; line-height: 40px; font-size: 12px; color: red;">文章只有审核通过且未删除才能在前端显示，如果设置为置顶则在该模块优先显示。</div>
 				<input type="hidden" id="isCreateDateSort" name="isCreateDateSort" value="${articleQueryDTO.createDateSortCss }" />
 			<div class="J_column">		
 			 <div class="c_left">
@@ -507,16 +508,6 @@
 			$("#isCreateDateSort").val(isCreateDateSort);
 		}
 		
-		function exportData(){
-			   var type = '${type}';
-			   var title = $("#title").val();
-			   var startDate = $("#startDate").val();
-			   var endDate = $("#endDate").val();
-			   var isReadSort = $("#isReadSort").val();
-			   var viewSort = $("#viewSort").val();
-			   var isCreateDateSort = $("#isCreateDateSort").val();
-			   window.location.href = "${ctx}/tie/export?title="+title+"&type="+type+"&startDate="+startDate+"&endDate="+endDate+"&isReadSort="+isReadSort+"&viewSort="+viewSort+"&isCreateDateSort="+isCreateDateSort;
-		}
 </script>
 	
 
