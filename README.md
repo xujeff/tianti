@@ -1,5 +1,5 @@
 # 天梯（tianti）
-
+  ![image](https://raw.githubusercontent.com/xujeff/tianti/master/screenshots/book.jpg)<br>
   天梯简介：<br>
   
     1、天梯是一款使用Java编写的免费的轻量级CMS系统，目前提供了从后台管理到前端展现的整体解决方案。
